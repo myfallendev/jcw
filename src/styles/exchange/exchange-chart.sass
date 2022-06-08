@@ -1,0 +1,45 @@
+.exchange-chart
+  text
+      fill: #000
+
+  path
+      fill: none
+      stroke-width: 1
+
+  path.candlestick
+      stroke: #000000
+      stroke-width: 1
+
+  path.candle.up,
+  path.candle.down
+    stroke: #333
+
+  path.candle.up
+    // fill: #b5d2c1
+    fill: #7baefc
+
+  path.candle.down
+    // fill: #ff7f7f
+    fill: #e83d39
+
+  path.volume
+      fill: #EEEEEE
+
+  .crosshair
+      cursor: crosshair
+
+      text
+        fill: white
+        font-size: 14px
+        line-height: 20px
+
+  .crosshair path.wire
+      stroke: #3898ce
+      stroke-dasharray: 1, 1
+
+  .crosshair .axisannotation path
+      fill: #3898ce
+      padding: 10px
+
+  path.superVolume
+      fill: red

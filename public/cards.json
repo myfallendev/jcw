@@ -1,0 +1,13 @@
+  {"cards":[{
+    "id": 0,
+    "card_number": "5240 6873 1152 2117",
+    "card_type": "Visa Gold",
+    "card_account" : "4081 7810 8041 9002 2521"
+  },
+  {
+    "id" : 1,
+    "card_number": "4154 1234 4444 3216",
+    "card_type": "Виртуальная",
+    "card_account" : "4081 7810 8041 9002 2521"
+  }]
+}

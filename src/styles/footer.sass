@@ -1,0 +1,166 @@
+
+.footer
+	color: rgba(250, 250, 250, 0.2)
+	background: #000
+	font-size: 14px
+	padding: 0 10px
+
+	&>div
+		padding: 0 40px
+		margin: 0 auto !important
+
+		.row
+			margin: 0
+
+	.footer-top
+		padding: 15px 30px 0
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		@media (max-width: 550px)
+			padding: 30px 0
+			flex-direction: column
+
+	.footer-top__item
+		width: 33%
+		&--column
+			& .footer-top__support-button
+				display: inline-block
+				width: auto
+		&:nth-of-type(2)
+			text-align: center
+
+		&:last-of-type
+			text-align: right
+
+		@media (max-width: 550px)
+			width: 100%
+			text-align: center
+
+	.footer-top__support-button
+		font-size: 20px
+		color: #fff
+		line-height: 38px
+		display: block
+
+		@media (max-width: 550px)
+			padding: 20px 10px
+
+	.social-networks
+		padding: 15px
+		margin: 0
+		line-height: 30px
+		text-align: center
+
+		@media (max-width: 550px)
+			margin-bottom: 20px
+
+	.social-networks__item
+		display: inline-block
+		margin: 5px
+
+		@media (max-width: 550px)
+			margin: 12px
+
+	.social-networks__link
+		display: block
+		border-radius: 50%
+		width: 40px
+		height: 40px
+		position: relative
+		overflow: hidden
+		box-shadow: none
+
+		@media (max-width: 550px)
+			width: 60px
+			height: 60px
+
+		&:hover
+			box-shadow: none
+
+		svg
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+
+			@media (max-width: 550px)
+				transform: translate(-50%, -50%) scale(1.5)
+
+	.go-top-btn
+		height: 56px
+		width: 56px
+		border-radius: 50%
+		display: block
+		position: relative
+		right: 0
+		top: 0
+		margin-left: auto
+
+		@media (max-width: 550px)
+			margin-right: auto
+			width: 60px
+			height: 60px
+
+	.go-top-btn::after
+		content: ""
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -39%) rotate(45deg)
+		width: 10px
+		height: 10px
+		border-top: 2px solid #fff
+		border-left: 2px solid #fff
+
+	.footer__terms-container
+		text-align: center
+
+		@media (min-width: 551px)
+			padding-top: 10px
+
+		@media (max-width: 550px)
+			.footer__terms-button,
+			.footer__privacy-button
+				display: block
+				color: white
+				padding: 20px
+
+			span
+				display: none
+
+	.footer-bottom
+		@media screen and (max-width:1074px)
+			margin-top: 25px !important
+
+		min-height: 60px
+		line-height: 60px
+
+		.copyright
+			float: left
+			@media screen and (max-width: 580px)
+				float: none
+				width: 100%
+				height: 40px
+				line-height: 40px
+				text-align: center
+
+		.developed-by
+			float: left
+			@media screen and (max-width: 580px)
+				float: none
+				width: 100%
+				height: 40px
+				line-height: 40px
+				text-align: center
+
+			span
+				margin-left: 35px
+				margin-right: 5px
+				@media screen and (max-width: 580px)
+					margin-left: 0px
+					margin-right: 0px
+
+			a
+				color: rgba(250, 250, 250, 0.2)

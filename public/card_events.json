@@ -1,0 +1,28 @@
+  {"card_events":[{
+    "company_name": "OOO KARSHERING RUSSIYA",
+    "sum": "+4000000,00",
+    "event_type":"Транспорт",
+    "event_city":"Москва",
+    "event_date": "/Date(1487750400000-0000)/",
+    "event_description": "Плата за предоставление услуги SMS-банк",
+    "event_category": "Переводы"
+  },
+  {
+    "company_name": "OOO KARSHERING RUSSIYA",
+    "sum": "+8000000,00",
+    "event_type":"Транспорт",
+    "event_city":"Москва",
+    "event_date": "/Date(1487746800000-0000)/",
+    "event_description": "Плата за предоставление услуги SMS-банк",
+    "event_category": "Переводы"
+  },
+  {
+    "company_name": "OOO KARSHERING RUSSIYA",
+    "sum": "+5000000,00",
+    "event_type":"Транспорт",
+    "event_city":"Москва",
+    "event_date": "/Date(1487660400000-0000)/",
+    "event_description": "Плата за предоставление услуги SMS-банк",
+    "event_category": "Переводы"
+  }]
+}

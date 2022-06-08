@@ -1,0 +1,478 @@
+$prime-color: #3898ce
+
+.accounts .account
+	padding-right: 150px !important
+	@media(max-width: 499px)
+		padding-right: 10px !important
+
+.accounts--loading
+	min-height: 640px
+	background: linear-gradient(white, white 145px, transparent 145px, transparent 165px, white 165px, white 310px, transparent 310px, transparent 330px, white 330px, white 475px, transparent 475px, transparent 495px, white 495px, white 640px)
+	opacity: 0.7
+	// animation: 1.5s blinking infinite
+
+.account-transfer-buttons
+	position: absolute
+	right: 30px
+	top: 50%
+	transform: translateY(-50%)
+
+	@media(max-width: 499px)
+		position: static
+		transform: none
+		margin-top: 30px
+		margin-left: -45px
+		text-align: center
+
+		.account-transfer-button
+			width: 100px
+			line-height: 50px
+			display: inline-block
+
+.account-transfer-button
+	border-radius: 5px
+	margin: 10px
+	padding: 0 10px
+	width: 150px
+	font-size: 16px
+	border: 1px solid #428bca
+
+	&:hover
+		box-shadow: 0 5px 10px rgba(28, 114, 162, 0.20)
+
+	&:nth-of-type(2)
+		background: white
+		color: #428bca
+		position: relative
+		padding-right: 40px
+		padding-left: 10px
+		overflow: hidden
+
+		@media (max-width: 359px)
+			padding-right: 10px
+
+		&::before
+			content: ''
+			position: absolute
+			width: 18px
+			height: 1px
+			background: #4a98ce
+			top: 17px
+			right: 20px
+
+			@media (max-width: 520px)
+				top: 24px
+				right: 13%
+				width: 13%
+
+			@media (max-width: 359px)
+				display: none
+
+		&::after
+			content: ''
+			position: absolute
+			border-right: 1px solid #4a98ce
+			border-bottom: 1px solid #4a98ce
+			width: 5px
+			height: 5px
+			transform: rotate(-45deg)
+			top: 15px
+			right: 20px
+
+			@media (max-width: 520px)
+				top: 22px
+				right: 13%
+
+			@media (max-width: 359px)
+				display: none
+
+		// &:hover
+		// 	border-color: #1581be
+		// 	color: white
+
+		// 	&::after
+		// 		border-color: white
+
+		// 	&::before
+		// 		background: white
+
+	//
+	// &:hover, &:active
+	// 	background-color: lighten(#4640ca, 5%)
+	// 	color: white
+	//
+	// &:hover.disabled-button, &:active.disabled-button
+	// 	background-color: #4640ca
+	// 	+no-select
+
+.wallet-transfer-container
+	text-align: center
+	padding: 10px 40px
+	//width: 500px
+	@media (max-width: 400px)
+		padding: 10px
+	.field-error
+		margin: 0 !important
+		line-height: 2
+		vertical-align: middle
+
+.wallet-transfer-container
+	&__subtitle
+		margin-bottom: 30px
+	&__fees
+		position: relative
+		margin: 30px 0 15px
+
+	&__max-amount-text,
+	&__fee-text
+		color: #a2a2a2
+		font-size: 16px
+		font-weight: 400
+		&--prime
+			color: $prime-color
+		@media (min-width: 551px)
+			margin-top: 10px
+
+		@media (max-width: 550px)
+			margin-bottom: 10px
+	&__fee-togglers
+		position: relative
+		display: flex
+		width: 60%
+		margin: 10px auto
+		justify-content: center
+		align-items: center
+		span
+			&:before
+				position: relative
+				border-left: 1px solid #ededed
+				content: ''
+				margin: 0 10px
+				width: 1px
+				background: #ededed
+				height: 28px
+				color: #ededed
+	&__fee-toggler
+		position: relative
+		background: #fff
+		padding: 12px 15px
+		line-height: 1.32
+		border-radius: 8px
+
+	&__max-amount-button
+		background: none
+		border: none
+		outline: none
+		opacity: 0.9
+		color: #a2a2a2
+		font-size: 16px
+		font-weight: 300
+		text-transform: uppercase
+		border-bottom: 1px dotted #b6b6b6
+		padding: 5px
+		margin-left: 10px
+
+		&:hover
+			opacity: 1
+
+	&__currency-image
+		margin-right: 20px
+
+	&__address
+		margin: 15px
+		overflow: auto
+		padding: 15px
+		padding-right: 10px
+		word-wrap: break-word
+		display: flex
+		align-items: center
+		justify-content: space-between
+		background: #fafafa
+		border: 1px solid rgba(0, 0, 0, 0.075)
+		border-radius: 4px
+
+		&.copied
+			transition: 0.5s all
+			background: #b8f4b8
+
+			.wallet-transfer-container__copy-button
+				background: white
+
+.wallet-transfer-container__address-text
+	word-wrap: break-word
+	display: inline-block
+	width: calc(100% - 40px)
+	text-align: left
+
+.wallet-transfer-container__copy-button
+	margin: 0
+	background: none
+	padding: 10px
+	border: none
+	border-radius: 7px
+	display: flex
+	width: 44px
+	height: 44px
+	border-radius: 30px
+	transition: 0.3s all
+
+	&:hover
+		background: #3898ce
+
+		rect, path
+		stroke: white
+
+.wallet-transfer-container__deposit-qr-n-link
+	.cssload-loader
+		margin-top: 10px
+		position: static
+
+.wallet-transfer-gateways
+	width: 320px
+	@media (max-width: 400px)
+		width: 300px
+	&--gateway
+		cursor: pointer
+		justify-content: center
+
+		&:first-child:hover
+			box-shadow: 0 0 0 1px #fff inset
+		&:hover
+			border-color: rgba(0, 0, 0, 0.3)
+
+.wallet-transfer-buyWithCard-form
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	max-width: 595px
+	padding: 60px 0 40px
+	background: #fff
+
+	button
+		margin: 50px 0 0 0
+		min-width: 60px
+
+	@media (max-width: 1044px)
+		flex-direction: column
+
+	.field-error
+		padding: 4px
+		line-height: 1.67
+
+	&--item
+		position: relative
+		width: 280px
+		height: 64px
+		max-height: 64px
+		line-height: 64px
+		font-size: 16px
+		background: #f9fafc
+		border-radius: 2px
+		transition: 1s max-height cubic-bezier(0, 1, 0, 1)
+		@media (min-width: 1045px) and (max-width: 1350px)
+			width: 47%
+		&:nth-of-type(1)
+			margin-right: 35px
+			@media (min-width: 1045px) and (max-width: 1350px)
+				margin-right: 6%
+			@media (max-width: 1044px)
+				margin-right: 0
+			&::after
+				position: absolute
+				content: ''
+				right: -36px
+				top: 0
+				width: 0
+				height: 100%
+				border-right: 1px solid #f7f7f7
+				@media (max-width: 1044px)
+					display: none
+		&:nth-of-type(2)
+			@media (max-width: 1044px)
+				margin-left: 0
+				margin-top: 75px
+		&__title
+			position: absolute
+			top: -26px
+			line-height: 1
+			left: 0
+
+		input
+			width: 100%
+			line-height: 64px
+			padding: 0 0 0 20px
+
+			&:focus,
+			&:active
+				border-color: rgba(0, 0, 0, 0.2)
+
+		span
+			position: absolute
+			cursor: pointer
+			user-select: none
+			top: 50%
+			right: 0
+			transform: translateY(-50%)
+			font-size: 18px
+			padding: 0 16px 0 20px
+			border-left: 1px solid rgba(0, 0, 0, 0.075)
+			color: #030304
+			opacity: 0.4
+
+		span.fiat
+			padding-left: 30px
+			&::before
+				position: absolute
+				content: url(/img/icons/arrow_down.svg)
+				left: 8px
+				opacity: 0.8
+			&:focus,
+			&:active
+				background: #b8b8b8
+
+		&__optionList
+			position: absolute
+			top: 100%
+			right: 0
+			background: #fafafa
+			margin: 0
+			z-index: 10
+			border: 1px solid rgba(0, 0, 0, 0.075)
+			border-bottom-left-radius: 2px
+			border-bottom-right-radius: 2px
+			border-top: 0
+			color: rgba(3, 3, 4, 0.4)
+			max-height: 128px
+			overflow-y: hidden
+			li
+				line-height: 36px
+				&:hover
+					cursor: pointer
+					background: #fff
+					color: rgba(3, 3, 4, 0.75)
+				&:not(:last-child)
+					border-bottom: 1px solid rgba(0, 0, 0, 0.075)
+		&__cardNumber
+			width: 320px
+			margin-right: 15px
+		&__expiryDate
+			width: 162px
+			margin-right: 10px
+			input
+				padding: 0 0 0 50px
+		&__cvc
+			width: 88px
+	.btn-wrapper
+		display: flex
+		justify-content: space-between
+		width: 100%
+	&--clear
+		transform: rotate(45deg)
+		position: absolute
+		display: block
+		top: 0
+		bottom: 0
+		right: 20px
+		color: rgba(51, 51, 51, 0.4)
+		font-size: 36px
+	&--sectionTitle
+		width: 100%
+		font-size: 20px
+		font-weight: 500
+		margin: 45px 0
+		text-align: left
+
+.wallet-transfer-buyWithCard-auth
+	position: relative
+	display: flex
+	flex-flow: column nowrap
+	padding: 15px
+	align-items: center
+
+	&--title
+		font-size: 16px
+	&--code-input
+		margin: 15px 0
+
+.modal__body.fluid
+	width: unset
+	right: unset
+	height: auto !important
+
+	@media (max-width: 760px)
+		width: 380px
+	@media (max-width: 380px)
+		width: 100%
+
+.form-group__title
+	display: block
+	font-size: 20px
+	font-weight: 300
+	text-align: left
+	padding-left: 15px
+	width: 100%
+
+.form-group--amounts
+	display: flex
+	flex-wrap: wrap
+
+	svg
+		align-self: center
+		margin: 5px
+
+		@media (max-width: 550px)
+			transform: rotate(90deg) scale(0.7)
+			margin: 5px auto
+
+			path
+				fill: #999
+
+	.form-group__currency-label
+		margin-bottom: 0
+		font-weight: 300
+		color: #a2a2a2
+
+	.form-group__subgroup
+		width: 50%
+
+		@media (max-width: 550px)
+			width: 100%
+
+		input
+			text-align: left
+			margin-left: 10px
+			width: 60%
+			flex-grow: 1
+			z-index: 2
+			border: none
+			background: transparent
+
+			&:focus
+				background: #fafafa
+				position: relative
+				margin-top: -2px
+				margin-bottom: -2px
+				border: 1px solid #3898ce
+
+		&:first-of-type
+			.form-group__input-container
+				border-top-left-radius: 4px
+				border-bottom-left-radius: 4px
+
+				@media(min-width: 551px)
+					border-right: 1px solid #ececec
+
+		&:last-of-type
+			.form-group__input-container
+				border-top-right-radius: 4px
+				border-bottom-right-radius: 4px
+
+		.form-group__input-container
+			background: #fafafa
+			display: flex
+			height: 64px
+			font-size: 18px
+			position: relative
+			align-items: center
+			padding-left: 15px
+			border: 1px solid rgba(0, 0, 0, 0.075)

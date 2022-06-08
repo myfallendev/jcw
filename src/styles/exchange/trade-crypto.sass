@@ -1,0 +1,140 @@
+$errorColor: #DD5656
+
+.trade-crypto
+  min-height: 400px
+  background: white
+  padding-top: 10px
+
+  .trade-crypto__no-data
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    button
+      margin: auto
+
+  .trade-crypto__header
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+    @media (max-width: 1700px)
+      flex-direction: column
+
+  .trade-crypto__header-text
+    opacity: 0.4
+    color: #030304
+    font-size: 16px
+    font-weight: 400
+
+    @media (max-width: 1350px)
+      width: 100%
+
+    &.overflow, &.overflow .trade-crypto__header-button
+      color: $errorColor
+      opacity: 1
+      transition: 0.4s all
+
+  .trade-crypto__header-button
+    background: none
+    border: none
+    outline: none
+    opacity: 0.6
+    color: #030304
+    font-size: 16px
+    font-weight: 700
+    text-transform: uppercase
+    border-bottom: 1px dotted #b6b6b6
+    line-height: 1.2
+    margin-bottom: 10px
+
+    &:hover
+      opacity: 1
+
+    &:active
+      margin-left: 0
+
+  .form
+    // padding: 18px
+    background: #fff
+    text-align: center
+
+  .trade-crypro__label
+    display: flex
+    align-items: center
+    width: 100%
+    font-weight: 400
+    background: #f9fafc
+    margin-bottom: 10px
+    line-height: 64px
+    position: relative
+    padding: 0 20px
+
+    @media (max-width: 992px)
+      flex-wrap: wrap
+      margin-top: 30px
+      justify-content: space-between
+
+    &--unvalidated
+      background: rgba($errorColor, 0.4)
+      transition: 0.4s all
+
+    &--disabled
+      opacity: 0.4
+
+      button
+        cursor: default
+
+        &:hover
+          color: #aaa
+
+    input
+      background: none
+      width: calc(100% - 250px)
+      flex-grow: 1
+      display: inline-block
+
+      @media (max-width: 992px)
+        width: 75%
+
+  .trade-crypto__label-text
+    opacity: 0.4
+    color: #030304
+    font-size: 16px
+    font-weight: 400
+    line-height: 24px
+    width: 100px
+    flex-shrink: 0
+    text-align: left
+
+    @media (max-width: 992px)
+      width: 100%
+      margin-top: -20px
+
+  .trade-crypto__max-button
+    position: absolute
+    right: 70px
+    top: 50%
+    transform: translateY(-50%)
+    background: none
+    border: none
+    outline: none
+    padding: 10px
+    opacity: 0.4
+    color: #000
+    border-bottom: 1px dotted
+    text-transform: uppercase
+    line-height: 1
+    padding: 5px 0
+
+    &:hover
+      opacity: 1
+      color: rgb(255, 100, 60)
+
+    @media (max-width: 1900px)
+      display: none
+
+  .submit
+    padding: 10px 25px
+    margin-top: 15px

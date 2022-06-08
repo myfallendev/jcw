@@ -1,0 +1,92 @@
+.exchange-pairs
+  background: white
+  overflow: auto
+  margin-right: 10px
+  padding: 10px 20px
+  width: 200px
+
+  @media (max-width: 1300px)
+    width: 100%
+    margin: 0 0 20px
+    height: auto
+    padding-bottom: 20px
+
+  .exchange-pairs__title
+    font-size: 30px
+    padding: 20px 10px 10px
+    font-weight: 700
+    text-align: center
+
+    @media (max-width: 1300px)
+      display: none
+
+  .exchange-pairs__list
+    padding: 0
+
+    @media (min-width: 1201px)
+      max-height: calc(100% - 150px)
+      overflow: auto
+
+    @media (max-width: 1300px)
+      max-height: 230px
+      overflow: auto
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      padding: 15px
+      padding-bottom: 0
+      margin: 0
+      margin-bottom: 20px
+
+  .exchange-pairs__item
+    @media (max-width: 1300px)
+      display: inline-block
+      margin: 5px
+
+  .exchange-pairs__button
+    border-radius: 5px
+    margin-bottom: 7px
+    width: 100%
+
+    &:active,
+    &:hover,
+    &:visited,
+    &:focus
+      color: white !important
+
+    // @media (max-width: 1300px) and (min-width: 1100px)
+    //   font-size: 16px
+    //
+    // @media (max-width: 1100px) and (min-width: 993px)
+    //   font-size: 14px
+
+    @media (max-width: 1300px)
+      font-size: 16px
+      padding: 10px
+      margin: 0
+
+  .exchange-pairs__button--current
+    background-color: darken(saturate(rgb(255, 122, 87), 50%), 10%)
+
+  .exchange-pairs__filter-container
+    position: relative
+    margin-bottom: 10px
+
+    @media (max-width: 1300px)
+      width: 300px
+      max-width: 100%
+      margin: 0 auto
+
+  .exchange-pairs__filter-button
+    position: absolute
+    top: 50%
+    right: 10px
+    transform: translateY(-50%)
+
+    @media (max-width: 1300px)
+      right: 15px
+
+  .exchange-pairs__filter-input
+    max-width: 100%
+    padding: 0 40px 0 20px
+    text-transform: uppercase

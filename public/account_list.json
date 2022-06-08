@@ -1,0 +1,15 @@
+{"accounts":[{
+    "id": 0,
+    "account_sum": "12 000 000",
+    "account_currency": "RUB",
+    "account_name": "Основной счёт",
+    "account_number": "4081 7810 8041 9002 2521"
+  },
+  {
+    "id" : 1,
+    "account_sum": "1200",
+    "account_currency": "USD",
+    "account_name" : "Счёт кредитной карты",
+    "account_number": "4054 3346 8331 1234 3264"
+  }]
+}

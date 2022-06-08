@@ -1,0 +1,1 @@
+export { AppInfoPopup } from './AppInfoPopup';

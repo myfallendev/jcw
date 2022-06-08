@@ -1,0 +1,1 @@
+export { ModalPDF } from './ModalPDF';

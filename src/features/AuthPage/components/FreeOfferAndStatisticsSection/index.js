@@ -1,0 +1,1 @@
+export { FreeOfferAndStatisticsSection } from './FreeOfferAndStatisticsSection';

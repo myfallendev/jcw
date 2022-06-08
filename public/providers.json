@@ -1,0 +1,42 @@
+  {"providers":[{
+    "id": 0,
+    "name": "Ростлелеком",
+    "image": "rostelekom.png"
+  },
+  {
+    "id": 1,
+    "name": "NetByNet",
+    "image": "netbynet.png"
+  },
+  {
+    "id": 2,
+    "name": "Onlime",
+    "image": "onlime.png"
+  },
+  {
+    "id": 3,
+    "name": "Акадо",
+    "image": "akado.png"
+  },
+  {
+    "id": 4,
+    "name": "2 СОМ",
+    "image": "2com.png"
+  },
+  {
+    "id": 5,
+    "name": "Комплат",
+    "image": "complat.png"
+  },
+  {
+    "id": 6,
+    "name": "ГорКом",
+    "image": "gorkom.png"
+  },
+  {
+    "id": 7,
+    "name": "Skype",
+    "image": "skype.png"
+  }
+]
+}

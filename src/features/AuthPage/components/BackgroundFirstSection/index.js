@@ -1,0 +1,1 @@
+export { BackgroundFirstSection } from './BackgroundFirstSection';

@@ -1,0 +1,119 @@
+.modal__overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 99;
+	max-width: 100% !important;
+}
+
+.modal__body * {
+	box-sizing: border-box;
+}
+.modal__body img {
+	max-width: 100%;
+}
+.modal__body.blur {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.modal__body.blur::before {
+	content: '';
+	position: fixed;
+	z-index: 101;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.7);
+}
+.modal__body {
+	position: fixed;
+	max-height: 90vh;
+	height: auto;
+	width: 550px;
+	top: 50%;
+	left: 50%;
+	background-color: #fff;
+	z-index: 100;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	align-content: flex-start;
+	box-shadow: 0 30px 40px 0 rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	transform: translate(-50%, -50%);
+}
+
+.modal__container {
+	position: relative;
+	overflow: auto;
+	text-align: left;
+}
+
+.modal__header {
+	padding: 10px 45px;
+	font-size: 20px;
+	text-align: center;
+	min-height: 48px;
+	font-weight: 400;
+	width: 100%;
+}
+
+.modal__content {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+.modal__area {
+	height: 100%;
+	max-height: calc(90vh - 54px);
+	overflow: auto;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.modal__footer {
+	padding: 10px 25px;
+	border-top: 1px solid #ccc;
+	font-size: 1rem;
+}
+
+.modal__close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	background: url(/img/close-icon.png) no-repeat center;
+	display: block;
+	height: 24px;
+	width: 24px;
+	margin: 0;
+	cursor: pointer;
+}
+
+.modal__close:hover {
+	opacity: 1;
+}
+
+@media screen and (max-width: 540px) {
+	.modal__body {
+		height: 100vh;
+		max-height: 100vh;
+		width: 100vw;
+		max-width: 100vw;
+		border-radius: 0;
+	}
+	.modal__body.fluid {
+		border-radius: 10px;
+	}
+	.pdf-modal {
+		width: 100% !important;
+	}
+	.modal__area {
+		max-height: calc(100vh - 54px);
+	}
+}

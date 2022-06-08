@@ -1,0 +1,2009 @@
+=box-shadow($shadow)
+	-webkit-box-shadow: $shadow
+	-moz-box-shadow:    $shadow
+	-ms-box-shadow:     $shadow
+	box-shadow:         $shadow
+
+=disabled-button
+	opacity: 0.5
+	cursor: default
+
+// $button-blue: rgb(72, 139, 244)
+$button-blue: #3898ce
+$button-orange: rgb(255, 122, 87)
+
+.login-page
+	padding: 0
+	margin: 0
+	position: relative
+	width: 100%
+
+	.cssload-loader
+		position: fixed
+		z-index: 150
+
+	.navbar
+		// background: transparent
+		border: none
+		padding-left: 45px
+		padding-right: 42px
+		color: #000 !important
+		font-size: 18px
+		z-index: 1
+		position: absolute
+		width: 100%
+
+		@media (max-width: 992px)
+			.navbar-nav
+				display: flex
+				flex-direction: column
+				height: 100%
+				margin: 0
+				justify-content: center
+				align-items: center
+
+			&.opened
+				box-shadow: 0 0 17px rgba(28, 114, 162, 0.27)
+				color: white
+				background-color: #3898ce
+				height: 100vh
+
+				.navbar-collapse
+					height: 100% !important
+					padding-top: 70px
+					padding-bottom: 70px
+
+		.navbar-collapse
+			position: relative
+
+			.social-networks
+				position: absolute
+				left: 50%
+				bottom: 26px
+				transform: translateX(-50%)
+				padding: 0
+				margin: 0
+				width: 100%
+				text-align: center
+
+				@media (min-width: 993px)
+					display: none
+
+				@media (max-height: 420px)
+					bottom: 5px
+
+			.social-networks__item
+				display: inline-block
+				margin: 10px
+
+			.social-networks__link
+				background: white
+				position: relative
+				width: 45px
+				height: 45px
+
+				&:active
+					background: #aaa
+
+				svg
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -50%)
+
+					path
+						fill: #3898ce
+
+		.navbar-nav__item
+			@media (max-width: 992px)
+				transition: 0.3s
+				display: inline-block
+				width: 50%
+				text-align: center
+				margin: 15px auto
+				border-radius: 38px
+
+				&:hover
+					background: white
+					color: #3898ce
+
+			@media (max-width: 500px)
+				border-radius: 22px
+				width: 80%
+
+			@media (max-height: 420px)
+				border-radius: 22px
+				margin: 5px
+
+		.navbar-nav__item--logo
+			@media (max-width: 992px)
+				display: none !important
+
+		.navbar-nav__item--login
+			width: 120px
+			border: 1px solid white
+
+			@media (min-width: 993px)
+				&:hover
+					border-color: white
+					background: white
+					.navbar-nav__link--login
+						color: #000 !important
+
+				.navbar-nav__link--login
+					color: white !important
+
+			@media (max-width: 993px)
+				&:hover
+					background: white
+
+					.navbar-nav__link--login
+						color: #3898ce
+
+		.navbar-nav__item--login, .navbar-nav__item--register
+			display: block
+			float: right
+			margin-top: 24px
+			margin-right: 19px
+			height: 48px
+			line-height: 48px
+			border-radius: 25px
+			text-align: center
+			text-transform: capitalize
+			overflow: hidden
+			transition: 0.3s all
+
+			@media (min-width: 993px)
+				&:hover
+					box-shadow: 0 5px 7px rgba(0, 0, 0, 0.08)
+				&:active
+					box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08)
+
+			@media (max-width:992px)
+				float: none
+				width: 50%
+				height: auto
+				display: block
+				margin: 15px auto
+				border-radius: 38px
+
+			@media (max-width: 500px)
+				border-radius: 22px
+				width: 80%
+
+			@media (max-height: 420px)
+				font-size: 20px
+				margin: 5px
+
+		.navbar-nav__link
+			font-size: 18px
+			color: #000
+			text-transform: capitalize
+
+			@media (min-width: 993px)
+				&:hover,
+				&:active,
+				&:visited,
+				&:visited:hover,
+				&:visited:active,
+				&:focus
+					// color: white
+					background: transparent
+
+			@media (max-width: 1300px)
+				font-size: 14px
+				&:not(.navbar-nav__link--logo)
+					padding: 38px 10px
+
+			@media (max-width: 992px)
+				color: white
+				padding: 15px 30px
+				width: auto !important
+				font-size: 35px
+				line-height: 1.5
+
+				&:hover,
+				&:visited:hover,
+				&:focus
+					color: #3898ce
+					background: transparent
+
+				&.navbar-nav__link--logo
+					display: none
+
+				&:not(.navbar-nav__link--logo)
+					margin: 0
+					padding: 15px 20px
+
+			@media (max-width: 500px)
+				font-size: 18px
+				width: 80%
+
+				&:not(.navbar-nav__link--logo)
+					padding: 12px 30px
+					line-height: 21px
+
+			@media (max-height: 420px)
+				font-size: 20px
+				padding: 10px !important
+
+		.navbar-nav__link--login,
+		.navbar-nav__link--register
+			height: 48px
+			line-height: 48px
+			color: white
+			transition: 0.3s all
+
+			@media (min-width: 993px)
+				padding: 0 !important
+
+			@media (max-width: 992px)
+				line-height: 1.5
+				height: auto
+
+			@media (max-width: 500px)
+				line-height: 21px
+				padding-top: 12px
+				padding-bottom: 12px
+
+		.navbar-nav__item--register
+			background: $button-orange
+			color: white
+			box-shadow: none
+
+			&:hover
+				background-color: saturate(darken($button-orange, 10%), 20%)
+				color: white !important
+
+			@media (min-width: 992px)
+				width: 155px
+				box-shadow: 0 15px 17px rgba(0, 0, 0, 0.08)
+
+
+		// .navbar-nav__item--login
+
+		.navbar-nav__link--register,
+		.navbar-nav__link--register:hover
+			color: #fff !important
+
+		// .navbar-nav__item--login
+
+
+
+	// & > div:not(.navbar) > div
+	.free-offer__row,
+	.statistics__container,
+	.application-description__top-row,
+	.services-section__container,
+	.registration.section .row,
+	.footer > div
+		margin: 0 auto
+		max-width: 1250px
+
+	.background-first
+		margin-top: 0
+		background: url('/img/first-screen-bg.jpg') no-repeat top right
+		background-size: 50% auto
+		text-align: center
+		color: #000
+		padding-left: 60px
+
+		@media (max-width: 1600px)
+			background-size: calc(100% - 900px) auto
+
+		@media (max-width: 1400px)
+			background-size: 530px auto
+
+		@media (max-width: 1300px)
+			background-size: 500px auto
+
+		@media (max-width: 1100px)
+			background-size: 400px auto
+
+		@media (max-width: 992px)
+			background: #fff
+			padding-left: 0
+			padding-right: 0
+
+		@media (min-width: 1300px)
+			&::before
+				content: ""
+				position: absolute
+				top: 0
+				right: 0
+				width: 380px
+				height: 100px
+				background: #3898ce
+				z-index: -1
+				border-bottom-left-radius: 20px
+
+	.background-first__row
+		margin: 0
+		width: 860px
+		padding-top: 200px
+		height: 100%
+		padding-bottom: 50px
+		text-align: left
+
+		@media (max-width: 1600px)
+			padding-top: 170px
+
+		@media (max-width: 992px)
+			padding-top: 0
+			width: 100%
+			max-width: 100%
+			text-align: center
+
+	.background-first__description-container
+		@media (max-width: 1600px)
+			max-width: 700px
+			min-height: 0
+
+		@media (max-width: 1300px)
+			max-width: calc(100% - 250px)
+
+		@media (max-width: 1150px)
+			max-width: calc(100% - 350px)
+
+		@media (max-width: 992px)
+			width: 100%
+			max-width: 100%
+			text-align: center
+			padding-top: 100px
+			padding-left: 40px
+			padding-right: 40px
+			padding-bottom: 19%
+			background: #14384c url('/img/first-screen-mobile-bg.jpg') top center no-repeat
+			background-size: cover
+			min-height: 294px
+			position: relative
+			color: white
+
+			svg
+				display: block
+				position: absolute
+				left: 0
+				right: 0
+				bottom: -2px
+				width: 100%
+				height: auto
+
+		@media (width: 800px) and (height: 1280px)
+			padding-top: 150px
+
+		@media (max-width: 400px)
+			text-align: left
+			padding-left: 20px
+			padding-right: 20px
+
+	.background-first__title
+		padding: 0
+		font-size: 55px
+		float: none
+		margin-bottom: 31px
+		font-weight: 800
+		max-width: 950px
+
+		@media (max-width: 1600px)
+			font-size: 50px
+
+		@media (max-width: 1300px)
+			font-size: 45px
+
+		@media (max-width:992px) and (min-width: 401px)
+			text-align: center
+
+		@media (max-width: 800px) and (min-height: 900px)
+			font-size: 45px
+			padding: 0 20px
+			margin: 30px 0
+
+		@media (width: 800px) and (height: 1280px)
+			margin-bottom: 70px
+
+		@media (width: 600px) and (min-height: 900px)
+			font-size: 40px
+			padding: 0
+
+		@media (max-width:550px)
+			font-size: 35px
+			font-weight: 700
+
+		@media (width: 1366px) and (height: 768px)
+			font-size: 50px
+			max-width: 100%
+
+		@media (max-width: 400px)
+			font-size: 25px
+			margin-bottom: 20px
+			padding: 0
+
+
+	.background-first__subtitle
+		font-size: 18px
+		margin: 0
+		margin-bottom: 42px
+		max-width: 800px
+		font-weight: 500
+
+		@media (max-width:992px)
+			max-width: 100%
+			padding-left: 0
+			padding-right: 0
+
+		@media (max-width: 992px) and (min-width: 400px)
+			margin-bottom: 50px
+
+	.background-first
+		.btn.know-more
+			margin: 0 auto
+			padding: 17px 55px
+			box-shadow: 0 15px 17px rgba(28, 114, 162, 0.27)
+
+			@media (max-width: 992px)
+				margin: 0 auto
+
+	$featureBorder: 1px solid rgba(#eaeef9, .6)
+
+	.background-first__features-container
+		min-height: 100px
+		max-width: 1090px
+		padding: 0
+		margin: 60px 0
+		display: flex
+		align-items: stretch
+		border-radius: 7px
+		border: $featureBorder
+
+		@media (max-width: 1600px)
+			margin-bottom: 45px
+
+		@media screen and (max-width:992px)
+			margin-top: 100px
+
+		@media (max-width: 992px)
+			flex-direction: column
+			margin: 15px 40px 30px
+
+		@media (width: 800px) and (height: 1280px)
+			margin-bottom: 80px
+
+		@media (width: 600px) and (min-height: 900px)
+			margin-top: 0
+			margin-bottom: 20px
+
+	.background-first__feature
+		// display: flex
+		padding: 20px 15px
+
+		&:nth-of-type(2)
+			border-left: $featureBorder
+			border-right: $featureBorder
+
+		img
+			margin-left: 18px
+
+		&:first-of-type .background-first__feature-icon
+			margin-left: 0
+			width: 78px
+			margin-right: 14px
+
+			@media (width: 600px) and (min-height: 900px)
+				width: 58px
+
+		@media (max-width:992px)
+			display: flex
+			justify-content: flex-start
+			align-items: center
+			padding: 15px
+			width: 100%
+
+			&:nth-of-type(2)
+				border-left: none
+				border-right: none
+				border-top: $featureBorder
+				border-bottom: $featureBorder
+
+		@media (max-width: 768px)
+			&:nth-of-type(3)
+				margin-bottom: 0
+
+
+		@media (width: 600px) and (min-height: 900px)
+			padding: 5px 10px
+
+		@media (max-width: 400px)
+			.background-first__feature-icon
+				width: 46px
+				height: 46px
+
+			&:first-of-type .background-first__feature-icon
+				width: 55px
+
+	.background-first__feature-icon
+		margin-right: 22px
+		margin-left: 6px
+		width: 65px
+		height: 65px
+		text-align: center
+		flex-shrink: 0
+
+		@media (min-width: 993px)
+			margin-bottom: 25px
+
+		@media (width: 600px) and (min-height: 900px)
+			width: 45px
+
+	.background-first__feature-text
+		font-size: 16px
+		line-height: 22px
+
+		@media (max-width: 992px)
+			display: inline-block
+			margin: 0
+			text-align: left
+
+		@media (width: 800px) and (height: 1280px)
+			font-size: 22px
+			line-height: 1.4
+
+	.navbar-nav .language
+		order: 2
+
+		ul
+			border-color: $button-blue
+
+			@media (min-width: 993px)
+				border-color: white
+
+				&:hover
+					background: white
+					border-color: white
+					transition: 0.3s all
+					box-shadow: 0 5px 7px rgba(28, 114, 162, 0.27)
+			&:active
+				box-shadow: 0 2px 4px rgba(28, 114, 162, 0.27)
+
+	.navbar-nav__item--logo
+		float: left
+		margin-right: 38px
+
+		@media (max-width: 1300px)
+			margin-right: 5px
+
+		@media (max-width: 992px)
+			display: none
+
+	.logo-svg
+		path
+			fill: white
+
+	.background-first
+		.mobile-menu
+			@media (min-width: 993px)
+				display: none
+
+			.btn
+				padding: 7px 25px
+				display: inline-block
+				margin-right: 11px
+				text-transform: capitalize
+				box-shadow: 0 5px 6px rgba(0, 0, 0, 0.08)
+
+				&:hover
+					box-shadow: 0 5px 16px rgba(0, 0, 0, 0.08)
+
+				&--orange
+					border: 1px solid $button-orange
+
+				&--empty
+					border: 1px solid white
+
+					&:hover
+						background-color: white
+						color: #333
+
+				@media (max-width: 400px)
+					font-size: 14px
+
+		.mobile-menu__logo
+			position: absolute
+			top: 18px
+			left: 50%
+			transform: translateX(-50%)
+			z-index: 100
+
+			@media (max-width: 400px)
+				left: 18px
+				transform: none
+
+		.mobile-menu__container
+			margin-right: auto
+
+			@media (max-width: 400px)
+				text-align: left
+
+	.statistics
+		padding: 60px 0
+		min-height: 391px
+		background: #f1f7fb
+
+		@media (width: 1366px) and (height: 768px)
+			padding-bottom: 20px
+
+		@media (max-width: 992px)
+			padding: 60px 20px 48px
+
+		@media (max-width: 800px) and (min-height: 900px)
+			padding: 50px 10px 40px
+
+		@media (width: 800px) and (height: 1280px)
+			padding-top: 80px
+			padding-bottom: 80px
+
+	.statistics__title
+		font-size: 36px
+		font-weight: 800
+		text-align: center
+
+		@media (width: 1366px) and (height: 768px)
+			font-size: 30px
+
+	.statistics__subtitle
+		margin-top: 16px
+		text-align: center
+
+	$featuresBorder: 1px solid rgba(#000000, 0.05)
+
+	.statistics__features
+		margin: 20px 0 0
+		border-radius: 7px
+		border: $featuresBorder
+
+		@media (min-width: 700px)
+			display: table
+			max-width: 100%
+
+	.statistics__feature
+		min-height: 150px
+
+		@media (min-width: 768px)
+			display: table-cell
+			float: none
+			padding: 20px
+
+			&:nth-of-type(2)
+				border-left: $featuresBorder
+				border-right: $featuresBorder
+
+		@media (max-width: 767px)
+			width: 100%
+			min-height: 0
+			padding: 15px
+
+			&:nth-of-type(2)
+				border-top: $featuresBorder
+				border-bottom: $featuresBorder
+
+		@media (max-width:465px)
+			margin-bottom: 0
+
+		@media (max-width: 800px) and (min-width: 600px) and(min-height: 900px)
+			width: 33%
+			float: left
+
+	.statistics__feature-icon
+		display: block
+		margin: 0 auto 15px
+
+		@media (max-width: 1600px)
+			width: auto
+			height: 140px
+
+		@media (max-width: 992px)
+			width: 160px
+			height: auto
+			font-size: 16px
+
+	.statistics__feature-text
+		margin: auto
+		margin-top: 5px
+		text-align: center
+		font-size: 18px
+		top: 0
+		bottom: 0
+
+		@media (width: 1366px) and (height: 768px)
+			font-size: 16px
+
+		@media (max-width: 992px)
+			font-size: 16px
+
+		@media (width: 600px) and (height: 960px)
+			font-size: 14px
+
+	.free-offer
+		color: #000
+		min-height: 384px
+		background: white
+		padding: 50px 0
+
+	.free-offer__row
+		padding-top: 30px
+		padding-bottom: 20px
+		max-width: 900px
+
+		@media (max-width: 992px)
+			padding: 40px
+			padding-bottom: 20px
+
+		@media (max-width: 450px)
+			padding: 40px 20px 20px
+
+	.free-offer__buble-container
+		position: relative
+		padding-bottom: 8px
+		padding-right: 26px
+		width: 375px
+		max-width: 90%
+		margin-left: auto
+		margin-right: auto
+
+		@media (width: 1366px) and (height: 768px)
+			width: 580px
+			margin-left: 100px
+
+		@media(max-width: 992px)
+			position: relative
+			margin-left: auto
+			margin-right: auto
+			margin-bottom: 30px
+			padding: 0
+			padding-bottom: 38px
+
+		@media (width: 600px) and (height: 960px)
+			width: 100%
+
+	$bubleShadowColor: #e5e8ef
+
+	.free-offer__buble-curl
+		position: absolute
+		bottom: 0
+		right: 0
+		filter: drop-shadow(4px 2px 3px $bubleShadowColor)
+
+		@media(max-width: 992px)
+			bottom: 0
+			right: 50%
+			transform: translateX(50%) rotate(52deg)
+
+		@media (width: 414px) and (height: 736px)
+			transform: translateX(65%) rotate(52deg)
+
+	.free-offer__buble
+		font-size: 20px
+		font-weight: 500
+		color: #aeadb3
+		background-color: white
+		padding: 17px 30px
+		border-radius: 40px
+		box-shadow: 3px 3px 15px $bubleShadowColor
+
+		@media (max-width:992px)
+			text-align: center
+
+	.free-offer__jetiks-container
+		text-align: center
+
+	.free-offer__jetiks-image
+		width: 314px
+		height: 364px
+		max-width: 100%
+		display: block
+		margin-left: auto
+		margin-top: -80px
+		margin-bottom: 80px
+
+		@media (width: 1366px) and (height: 768px)
+			margin-top: -60px
+			margin-bottom: 60px
+			transform: scale(0.7)
+
+		@media (max-width: 768px)
+			margin-top: -50px
+			margin-bottom: 50px
+
+		@media (width: 800px) and (height: 1280px)
+			margin-top: -50px
+			margin-bottom: 50px
+
+		@media (width: 600px) and (min-height: 900px)
+			width: 220px
+			height: auto
+
+		@media (max-width: 400px)
+			margin-top: -20px
+			margin-bottom: 20px
+
+
+	.free-offer-about
+		color: #000
+		padding-top: 0px
+		padding-left: 40px
+		padding-right: 330px
+		margin-top: -340px
+
+		@media (max-width:740px)
+			margin-top: 20px
+			padding: 20px
+
+		@media (min-width: 768px) and (max-width: 800px) and (min-height: 900px)
+			margin-top: -370px
+			padding-left: 10px
+
+		@media (width: 600px) and (min-height: 900px)
+			margin-top: -300px
+			padding: 20px 230px 20px 0px
+
+		@media (max-width: 450px)
+			padding: 20px 10px 30px
+
+	.free-offer-about__title
+		font-size: 40px
+		font-weight: 800
+		margin-bottom: 10px
+
+		@media (max-width: 1600px)
+			font-size: 30px
+			margin-bottom: 6px
+
+		@media (width: 600px) and (min-height: 900px)
+			font-size: 25px
+
+		span
+			color: #999
+
+	.free-offer-about__list
+		padding: 0
+
+	.free-offer-about__item
+		font-size: 17px
+		font-weight: 300
+		line-height: 30px
+		padding-left: 10px
+		position: relative
+
+		@media (width: 1366px) and (height: 768px)
+			line-height: 28px
+
+		@media (width: 600px) and (min-height: 900px)
+			font-size: 14px
+			line-height: 24px
+
+		&:last-of-type
+			font-style: italic
+			color: #76767A
+
+			&::before
+				display: none
+
+		&::before
+			content: ''
+			width: 3px
+			height: 3px
+			background: #000
+			border-radius: 50%
+			position: absolute
+			left: 0
+			top: 14px
+			transform: translateY(-50%)
+
+	@media screen and (max-width:992px)
+		.free-offer-about__list
+			text-align: left
+			margin: 20px auto 0 auto
+			padding-left: 0
+			display: table
+
+		.free-offer-about__item
+			width: auto
+			float: left
+			min-width: 51%
+
+	.application-description
+		padding-top: 55px
+		padding-bottom: 35px
+		background: #f1f7fb
+		color: #000
+		text-align: center
+
+		@media (max-width: 1600px)
+			padding-top: 60px
+
+		@media (width: 1366px) and (height: 768px)
+			position: relative
+			padding-bottom: 20px
+
+		@media (max-width: 768px)
+			padding-top: 40px
+			padding-bottom: 20px
+			position: relative
+
+		@media (width: 600px) and (height: 960px)
+			padding-top: 30px
+
+		@media (max-width: 450px)
+			padding-top: 60px
+			padding-bottom: 60px
+
+		.btn
+			padding: 10px 45px
+			box-shadow: 0 15px 17px rgba(0, 0, 0, 0.08)
+
+			&:hover
+				box-shadow: 0 5px 10px rgba(0, 0, 0, 0.18)
+
+			&:active
+				box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08)
+
+	.application-description__top-row
+		max-width: 1000px
+		text-align: center
+
+		@media (max-width: 992px)
+			padding: 0 60px
+
+		@media (max-width: 450px)
+			padding: 0 40px
+
+		@media (max-width: 359px)
+			padding: 0 20px
+
+	.application-description__title
+		font-size: 45px
+		font-weight: 800
+		margin: 0 0 39px
+
+		@media (max-width: 1366px)
+			font-size: 35px
+
+		@media (max-width: 992px)
+			margin-bottom: 20px
+
+		@media (max-width:550px)
+			font-size: 40px
+			margin-bottom: 40px
+
+		@media (max-width: 800px) and (min-height: 900px)
+			font-size: 45px
+			margin: 50px 0
+
+		@media (max-width: 550px)
+			font-size: 33px
+
+	.application-description__subtitle
+		max-width: 840px
+		margin: 0 auto 45px
+		color: #919497
+		font-size: 16px
+		line-height: 28px
+
+		@media (max-width:992px)
+			margin-bottom: 10px
+
+		@media (max-width:550px)
+			margin-bottom: 40px
+
+		@media (max-width: 800px) and (min-height: 900px)
+			margin-bottom: 100px
+
+		@media (width: 600px) and (height: 960px)
+			margin-bottom: 50px
+
+	.application-description__image-container
+		max-width: 995px
+		margin: 125px auto 0 auto
+		margin-top: 40px
+		padding: 0 40px
+
+		@media (max-width: 500px)
+			margin-top: 60px
+
+		@media (max-width: 800px) and (min-height: 900px)
+			padding: 0
+			margin-top: 80px
+
+	.application-description__image
+		width: 100%
+		height: auto
+
+		@media (max-width: 1600px)
+			width: 70%
+
+		@media (max-width: 992px)
+			width: 80%
+
+		@media (max-width: 500px)
+			width: 100%
+
+	.services-section
+		padding: 55px 0
+		color: #333333
+		background: #FFFFFF
+		min-height: 864px
+
+		@media (width: 1366px) and (height: 768px)
+			padding-top: 20px
+
+		@media (max-width: 992px)
+			min-height: 0
+			padding-bottom: 20px
+
+			.service
+				min-height: 120px
+
+		@media (width: 800px) and (height: 1280px)
+			padding-top: 85px
+
+	.services-section__title
+		font-size: 50px
+		text-align: center
+		font-weight: 800
+
+		@media (max-width: 1366px)
+			font-size: 35px
+
+		@media (width: 800px) and (height: 1280px)
+			font-size: 50px
+
+		@media (max-width: 400px)
+			padding-left: 20px
+			padding-right: 20px
+
+	.services-section__subtitle
+		font-size: 20px
+		opacity: 0.42
+		text-align: center
+		margin-top: 16px
+		font-weight: 300
+
+		@media (max-width:768px)
+			margin-bottom: 50px
+
+		@media (max-width: 599px)
+			margin-bottom: 20px
+
+		@media (max-width: 400px)
+			padding-left: 20px
+			padding-right: 20px
+
+	.services-section__column
+		margin-top: 60px
+		margin-bottom: 0
+		padding-left: 0
+		padding-right: 0
+
+		@media (max-width:768px)
+			margin: 0
+			width: 100%
+
+		&--left
+			.service:nth-child(2n+1)
+				background: #f1f7fb
+
+		&--right
+			@media (min-width: 768px)
+				.service:nth-child(2n)
+					background: #f1f7fb
+
+			@media (max-width: 767px)
+				.service:nth-child(2n + 1)
+					background: #f1f7fb
+
+		@media (max-width: 800px) and (min-width: 600px) and (min-height: 900px)
+			width: 50%
+
+	.services-section__feature.service
+		position: relative
+		height: 170px
+		display: flex
+		justify-content: flex-start
+		flex-direction: row
+		align-items: center
+		padding-left: 20px
+
+		@media (width: 1366px) and (height: 768px)
+			height: 120px
+
+		@media (width: 800px) and (height: 1280px)
+			height: 220px
+
+		@media (max-width: 599px)
+			height: 100px
+
+		// @media all and (-ms-high-contrast:none)
+			// display: table !important
+			// vertical-align: middle !important
+
+		// .service__icon-container
+		// 	width: 70px
+		// 	flex-shrink: 0
+			// @media all and (-ms-high-contrast:none)
+				// display: table-cell !important
+			// 	width: auto
+				// vertical-align: middle !important
+
+		.service__icon
+			background: $button-blue
+			width: 70px
+			height: 70px
+			display: block
+			position: relative
+			overflow: hidden
+			border-radius: 50%
+
+			svg
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+
+			@media (max-width: 599px)
+				width: 50px
+				height: 50px
+
+				svg
+					transform: translate(-50%, -50%) scale(0.7)
+
+		.service__description
+			font-size: 20px
+			margin: 20px
+			// height: fit-content
+			// min-height: 100%
+			color: #000
+			font-weight: 300
+
+			@media (width: 600px) and (min-height: 900px)
+				font-size: 16px
+
+			@media (max-width: 600px)
+				font-size: 16px
+
+	.service-section__disclaimer
+		float: right
+		text-align: right
+		font-size: 16px
+		line-height: 30px
+		padding: 15px
+		font-style: italic
+		color: #76767A
+
+		@media (max-width: 767px)
+			float: none
+			text-align: center
+
+	.services-section__feature--disabled
+		.service__icon,
+		.service__description
+			opacity: 0.4
+
+
+	.registration
+		background: #2f8cc7 url(../img/registration-section-bg.jpg) no-repeat top center
+		background-size: cover
+		min-height: 760px
+		position: relative
+		padding-bottom: 64px
+		overflow: hidden
+
+		.btn
+			width: 250px
+			display: block
+			min-height: 64px
+			padding: 18px 30px
+			letter-spacing: -1px
+			margin: 0 auto
+
+			&:hover:not(.disabled)
+				box-shadow: 0 2px 5px rgba(28, 114, 162, 0.5)
+			&:nth-of-type(2)
+				margin-top: 30px
+				margin-bottom: 30px
+			@media screen and (max-width:520px)
+				width: 100% !important
+				float: none
+				margin: 10px 0 !important
+
+		.reg-complete-popup__close-button
+			margin: 30px auto !important
+
+		.reg-complete-popup__text
+			margin: 40px
+
+		.jetiks
+			position: absolute
+			bottom: 0
+			right: 100px
+			height: 241px
+			width: 276px
+			z-index: 0
+			transform: translateY(125px)
+
+			@media screen and (max-width:850px)
+				display: none
+
+		.registration-section__title
+			color: #fff
+			font-size: 60px
+			font-weight: 800
+
+			@media (max-width: 1440px)
+				font-size: 50px
+
+			@media (max-width: 1366px)
+				font-size: 35px
+
+			@media (min-width: 768px) and (max-width: 800px) and (min-height: 1024px)
+				font-size: 42px
+				margin-bottom: 10px
+
+			@media (width: 800px) and (height: 1280px)
+				font-size: 42px
+				// padding: 0 40px
+
+			@media (max-width: 500px)
+				font-size: 30px
+				padding: 0 15px
+
+		.registration-section__subtitle
+			font-size: 20px
+			margin: 35px auto 50px
+			color: #fff
+			width: 50%
+
+			@media (max-width: 992px)
+				width: 100%
+				font-size: 20px
+				margin: 15px auto 20px
+
+			@media (min-width: 768px) and (max-width: 800px) and (min-height: 1024px)
+				font-size: 22px
+				margin-top: 25px
+				line-height: normal
+
+			@media (max-width: 500px)
+				padding: 0 25px
+				font-size: 18px
+				margin-bottom: 35px
+				margin-top: 30px
+
+			@media (max-width: 360px)
+				padding: 0 15px
+
+		.description
+			padding-top: 118px
+			text-align: center
+
+			@media (max-width: 1440px)
+				padding-top: 60px
+
+			@media (max-width: 800px)
+				padding-top: 50px
+
+			@media (max-width: 800px) and (min-width: 600px) and (min-height: 900px)
+				padding: 118px 100px 40px
+
+			@media (width: 600px) and (height: 960px)
+				padding-left: 40px
+				padding-right: 40px
+
+			@media (width: 800px) and (height: 1280px)
+				padding-bottom: 80px
+
+			// a:not(.restore-password)
+			// 	margin-top: 64px
+			// 	display: block
+			// 	width: 256px
+			// 	height: 64px
+			// 	font-size: 18px
+			// 	line-height: 64px
+			// 	text-align: center
+			// 	background: $button-blue
+			// 	border: 1px solid rgba(255, 255, 255, 0.6)
+			// 	border-radius: 2px
+			// 	color: #fff
+			//
+			// 	@media (max-width:992px)
+			// 		margin: 64px auto
+		.choose-login-type
+			height: 45px
+			background: #fff
+			border-radius: 2px
+			position: relative
+			padding: 0 10px
+			+box-shadow(0 7px 29px 0px rgba(88, 87, 104, 0.18))
+
+			&:before
+				content: ''
+				width: 1px
+				background: #ededed
+				height: 28px
+				position: absolute
+				display: block
+				left: 0
+				right: 0
+				bottom: 0
+				top: 0
+				margin: auto
+
+			&:after
+				content: ''
+				display: block
+				height: 12px
+				width: 12px
+				transform: rotate(45deg)
+				position: absolute
+				left: 0
+				right: 0
+				margin: auto
+				top: 39px
+				background: #fff
+
+		.choose-login-type__button
+			border: none
+			width: 50%
+			float: left
+			color: rgba(0, 0, 0, 0.4)
+			text-align: center
+			display: block
+			height: 48px
+			line-height: 48px
+			font-size: 16px
+
+			&:hover:not(.active)
+				color: $button-blue
+
+			&:hover
+				color: rgba(0, 0, 0, 0.4)
+
+			&.active
+				font-weight: 600
+				color: #000
+
+		.password-restore-popup input
+			margin-top: 24px
+			width: 100%
+
+		// .phone-codes-selector__search-field,
+		// .phone-input__phone-field
+		//
+		// .phone-codes-selector__search-field
+		// 	width: 100%
+
+		.restore-password-success-popup__text
+			margin: 40px
+			text-align: center
+			font-size: 22px
+			line-height: 30px
+
+		.restore-password-success-popup__close-button
+			margin: 30px auto !important
+
+		.phone-input__phone-field
+			display: inline-block
+			width: calc(100% - 110px) !important
+
+			@media (max-width: 400px)
+				width: calc(100% - 70px)
+
+			&--valid
+				background-color: #b8f4b8
+				transition: 0.5s all
+
+		.reg-container
+			padding-top: 10px
+			position: relative
+
+			p
+				margin-top: 5px
+				font-size: 14px
+				color: #333333
+				margin-bottom: 10px
+
+			.reg-window__restore-text
+				color: #bcbdbf
+				text-align: center
+				margin-top: 20px
+
+			.reg-window__restore-link
+				opacity: 0.7
+
+				&:hover
+					opacity: 1
+
+			@media screen and (max-width:992px)
+				padding-top: 0
+				margin-bottom: 30px
+
+			.reg-window
+				margin: 0 auto
+				padding: 64px
+				padding-top: 0
+				width: 512px
+				min-height: 430px
+				background: #f8f9fc
+				z-index: 1
+				position: relative
+				border-radius: 5px
+
+				@media screen and (max-width:992px)
+					margin: 0 auto
+					float: none
+
+				@media screen and (max-width:560px)
+					width: 100%
+					padding: 32px
+					padding-top: 0
+
+					.reg-window__switch-windows
+						margin-left: -32px
+						margin-right: -32px
+
+				@media screen and (max-width:355px)
+					padding: 10px
+					padding-top: 0
+
+					.reg-window__switch-windows
+						margin-left: -10px
+						margin-right: -10px
+
+				input
+					width: 100%
+					//384px
+					margin-top: 24px
+					// margin-top: 12px
+					padding-left: 16px
+					padding-right: 16px
+
+				input[type="password"], .phone-input ~ input
+					margin-top: 0
+
+				.field-error
+					padding: 0
+
+			.reg-window__switch-windows
+				margin-left: -63px
+				margin-right: -63px
+				margin-bottom: 36px
+				background-color: rgb(236, 239, 243)
+				-webkit-border-top-left-radius: 5px
+				border-top-left-radius: 5px
+				-webkit-border-top-rigth-radius: 5px
+				border-top-right-radius: 5px
+				overflow: hidden
+
+			.reg-window__switch-button
+				+box-shadow(inset 0 0 5px 0px rgba(88, 87, 104, 0.18))
+				border: none
+				width: 50%
+				background-color: rgb(236, 239, 243)
+				float: left
+				position: relative
+				color: rgba(0, 0, 0, 0.4)
+				border-radius: 0
+				text-align: center
+				display: block
+				height: 48px
+				line-height: 48px
+				font-size: 18px
+				text-transform: capitalize
+
+				&.active
+					color: #000
+					background-color: #f8f9fc
+					box-shadow: none
+
+			.restore-password
+				color: $button-blue
+
+				&:hover
+					border-bottom: 1px dotted $button-blue
+
+			.buttons
+				min-height: 64px
+				margin-top: 30px
+				text-align: center
+
+			.login
+				border: 1px solid #333333
+				width: 128px
+
+			.register
+				margin-left: 16px
+				width: 240px
+
+			.error
+				margin-top: 130px
+				color: #f00
+
+		// .reg-complete-popup, .restore-password-popup, .restore-password-success-popup
+		.restore-password-success-popup
+			background: #FFFFFF
+			box-shadow: 0 30px 40px 0 rgba(0,0,0,0.35)
+			border-radius: 8px
+			text-align: center
+			position: absolute
+			left: 0
+			right: 0
+			top: 50%
+			bottom: auto
+			transform: translateY(-50%)
+			width: 512px
+			min-height: 448px
+			margin: auto
+			z-index: 4
+			padding: 64px
+
+			.btn
+				margin: 50px auto 15px
+
+			input
+				width: 80%
+
+		.restore-password-popup
+			// min-height: 630px
+			// padding-bottom: 50px
+
+			.modal__header
+				font-size: 28px
+				min-height: auto
+
+			.modal__close
+				top: 20px
+
+			.restore-password-popup__subtitle
+				padding: 0 40px
+				text-align: center
+				margin-top: 20px
+				margin-bottom: 20px
+				font-size: 14px
+
+			input
+				width: calc(100% - 60px)
+				margin-top: 5px
+				margin-left: 30px
+				margin-right: 30px
+
+			.field-error
+				text-align: left
+				margin: 0 auto
+				width: 80%
+
+			a
+				margin: 10px auto
+
+		.restore-password-success-popup
+			height: auto
+			min-height: auto
+
+		h2
+			font-size: 26px
+			color: #333333
+			line-height: 32px
+
+		p
+			font-size: 16px
+			color: #333333
+			line-height: 24px
+			margin-top: 30px
+
+		// a:not(.restore-password)
+		// 	border: 1px solid #333333
+		// 	border-radius: 4px
+		// 	text-align: center
+		// 	display: block
+		// 	width: 200px
+		// 	height: 48px
+		// 	line-height: 48px
+		// 	font-size: 14px
+		// 	color: #333333
+		//
+		// 	&:hover
+		// 		color: $button-blue
+.login-page
+	.registration
+		.terms-and-privacy-policy
+			p
+				margin-top: 40px
+
+			a
+				display: inline
+				border: none
+				width: auto
+				height: auto
+				line-height: 1.5em
+				text-decoration: underline
+				color: $button-blue
+
+				&:hover
+					border-bottom: 1px dotted $button-blue
+					color: $button-blue
+
+.login-page
+	.registration
+		.reg-window
+			.terms-and-privacy-policy
+				margin-top: 20px
+				position: relative
+				padding-left: 32px
+
+				@media (max-width: 450px)
+					padding-left: 45px
+
+			.terms-and-privacy-policy__checkbox-container
+				width: auto
+				margin: auto
+				position: absolute
+				top: 0
+				left: 0
+				overflow: hidden
+
+				@media (max-width: 450px)
+					left: 5px
+
+				input
+					display: none
+
+			.terms-and-privacy-policy__label
+				width: 22px
+				height: 22px
+				margin: 0
+				display: block
+				cursor: pointer
+				background: #fafafa
+				border: 1px solid #ddd
+				border-radius: 3px
+				transition: 0.3s background-color
+
+				@media (max-width: 450px)
+					width: 30px
+					height: 30px
+
+			.terms-and-privacy-policy input:checked + .terms-and-privacy-policy__label
+				background: #3898ce url(../img/checked.png) no-repeat center
+				border-color: transparent
+
+//
+// .login-page
+// 	.registration
+// 			.register-disabled
+// 				+disabled-button
+
+@import './pdf-modal'
+
+.login-page .section
+	min-height: 100vh
+
+.login-page .free-offer-statistics-section
+	display: flex
+	flex-direction: column
+
+.login-page .section
+	.statistics, .free-offer
+		margin: 0
+		max-width: 100%
+
+	.statistics > div, .free-offer > div
+		margin: 0 auto
+
+	.statistics > div
+		max-width: 1250px
+
+.reg-window__switch-windows
+	background-color: white
+	text-transform: capitalize
+
+.login-page
+	@media (max-width: 992px)
+		// .background-first__title
+		// 	font-size: 55px
+		// 	padding-left: 20px
+		// 	padding-right: 20px
+		// 	margin-bottom: 50px
+
+		.background-first__description-container
+			min-height: auto
+			// margin-bottom: 50px
+
+		// .background-first__subtitle
+		// 	font-size: 25px
+			// padding-left: 40px
+			// padding-right: 40px
+		//
+		// .background-first__features-container
+		// 	margin: 15px 40px 30px
+		//
+		// .background-first__feature
+		// 	padding: 15px
+		//
+		// .free-offer .row
+		// 	padding: 40px
+		// 	padding-bottom: 20px
+
+		// .statistics
+		// 	padding: 40px
+		// 	padding-top: 25px
+
+			// .statistics-block
+			// 	margin-bottom: 35px
+
+	@media (max-width: 400px)
+		.navbar
+			.navbar-collapse .navbar-nav
+				// display: flex
+				// flex-direction: column
+				// height: auto
+				// padding-top: 0
+
+				.language
+					flex-shrink: 0
+
+				// & > li:not(.language)
+				// 	height: calc((100vh - 50px) / 6) !important
+				// 	min-height: 60px
+				//
+				// 	& > a
+				// 		padding-top: 10px !important
+				// 		padding-bottom: 10px !important
+				// 		height: 100%
+				// 		display: flex
+				// 		justify-content: center
+				// 		align-items: center
+
+				& > li.language
+					padding-top: 0
+
+		// .background-first__title
+		// 	font-size: 25px
+		// 	margin-bottom: 20px
+
+		.background-first__description-container
+			margin-bottom: 10px
+			padding-top: 70px
+
+		.background-first__subtitle
+			font-size: 14px
+			margin-bottom: 30px
+
+		.background-first__features-container
+			margin: 15px
+			// margin-bottom: 0
+
+		.background-first__feature-text
+			font-size: 14px
+
+		// .application-description__title
+		// 	font-size: 33px
+
+		.free-offer
+			.row
+				padding: 20px 10px 30px
+
+				.jetiks
+					padding-left: 0
+					padding-right: 0
+
+			.free-offer-explanation
+				margin-top: 0
+				font-size: 20px
+
+			ul li
+				font-size: 16px
+				line-height: 22px
+				margin-bottom: 10px
+
+		.registration
+			// .reg-complete-popup, .restore-password-popup, .restore-password-success-popup
+			.restore-password-success-popup
+				width: 100%
+				transform: none
+				padding: 30px 10px
+				margin-top: -30px
+
+				h1
+					font-size: 20px
+					padding: 0 20px
+
+			.restore-password-popup
+				padding: 15px
+
+				.modal__content
+					padding-bottom: 40px
+
+				.modal__header
+					font-size: 20px
+
+				.restore-password-popup__subtitle
+					font-size: 12px
+					line-height: 20px
+					padding: 0 10px
+
+				input
+					margin-top: 5px
+					margin-left: auto
+					margin-right: auto
+					width: 100%
+					line-height: 20px
+					height: 50px
+
+					&::-webkit-input-placeholder
+					&::-moz-placeholder
+					&:-moz-placeholder
+					&:-ms-input-placeholder
+						font-size: 14px
+
+	@media (width: 320px)
+		.section
+			width: 320px
+
+		.statistics
+			.statistics-block
+				.type
+					font-size: 16px
+
+		.services
+			.service
+				padding: 20px 10px
+				min-height: 0
+
+	@media(max-width: 1600px) and (min-width: 1025px)
+		// .free-offer-statistics-section.section
+		// 	.free-offer__row
+		// 			padding-bottom: 20px
+		//
+		// 	.statistics
+		// 		padding-top: 40px
+		//
+		// .application-description.section
+		// 	padding: 20px 20px 0
+		//
+		// .application-description__title
+		// 	font-size: 35px
+		//
+		// .apple-devices-img
+		// 	margin-top: 50px
+		.services
+			.service
+				min-height: 150px
+		// .registration.section
+		// 	.description
+		// 		padding-top: 30px
+
+				h1
+					font-size: 35px
+				p
+					margin: 20px auto
+					font-size: 20px
+
+			.reg-window
+				padding-bottom: 40px
+
+	@media(max-width: 1366px) and (min-width: 851px)
+		.background-first__description-container
+			min-height: 0
+
+		// .free-offer-statistics-section.section
+		// 	.free-offer
+		// 		.row
+		// 			padding-top: 40px
+		// 			padding-bottom: 20px
+			// .statistics
+			// 	padding-top: 20px
+
+		// .application-description.section
+		// 	padding: 20px 20px 70px
+
+		// .application-description__title
+		// 	font-size: 35px
+
+		.services
+			.service
+				min-height: 120px
+
+		.registration.section
+			.description
+				padding-top: 30px
+
+				p
+					margin: 20px auto
+
+	@media (width: 1366px) and (height: 768px), (width: 1280px) and (height: 800px)
+		.free-offer-statistics-section.section
+			.free-offer
+				.row
+					padding-top: 20px
+		.statistics
+			min-height: auto
+
+			// .statistics-block
+			// 	margin-top: 30px
+			// 	margin-bottom: 30px
+
+				.type
+					font-size: 18px
+
+		// .application-description.section
+		// 	.application-description__title
+		// 		font-size: 35px
+
+			.active-btn
+				line-height: 36px
+				padding-bottom: 0
+
+	@media (width: 1024px) and (height: 768px)
+		// .description h1
+		// 	font-size: 55px
+		// 	padding-left: 40px
+		// 	padding-right: 40px
+
+		.application-description.section
+			padding-top: 15px
+
+			// .row
+			// 	h1
+			// 		font-size: 30px
+
+			.register
+				display: inline-block
+				padding: 5px 15px
+				height: auto
+				line-height: 28px
+
+	@media (width: 768px) and (height: 1024px)
+		.nav.navbar-nav
+			ul
+				margin-left: 15px
+
+		// .background-first__title
+		// 	font-size: 45px
+
+		// .application-description.section
+		// 	padding-bottom: 100px
+		// 	position: relative
+
+			.row
+				padding: 0 40px
+			p
+				font-size: 20px
+			.apple-devices-img
+				margin-top: 90px
+
+			.register.btn-yellow
+				position: absolute
+				bottom: 20px
+				left: 50%
+				transform: translateX(-50%)
+				line-height: 28px
+				padding: 10px 20px
+				height: auto
+				font-size: 20px
+
+		.services
+			.service
+				min-height: 170px
+
+		// .registration
+		// 	.description
+		// 		padding: 118px 100px 40px
+
+.password-restore-popup
+	.modal__area
+		padding: 30px
+
+.field-error-container
+	min-height: 50px
+
+	.field-error
+		height: auto
+
+////////

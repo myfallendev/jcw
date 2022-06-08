@@ -1,0 +1,1 @@
+export { KYC } from './KYC';

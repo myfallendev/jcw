@@ -1,0 +1,155 @@
+
+.offices
+	background: #FAFAFA
+	padding-top: 96px
+	padding-bottom: 200px
+	position: relative
+
+	h1
+		font-size: 36px
+		color: #333333
+		text-align: center
+
+	&>div>p
+		margin: 16px auto
+		text-align: center
+		width: 80%
+
+	.filter-params
+		margin-top: 64px
+		margin-bottom: 64px
+		min-height: 64px
+		@media screen and (max-width:880px)
+			min-height: 148px
+
+		.select-elements
+			float: left
+			position: relative
+
+			@media screen and (max-width:600px)
+				float: none
+				margin: 0 auto
+				width: 288px
+
+			& > div
+				float: left
+				position: absolute
+				width: 308px
+				height: 64px
+
+				& > div
+					border-radius: 6px
+					width: 288px
+					background: #ECEFF1
+					overflow: hidden
+					position: relative
+					z-index: 2
+					background: #ECEFF1 url(../img/green-arrow-down.png) no-repeat 262px 25px
+
+				.cities
+					min-height: 64px
+
+				.cities.opened
+					max-height: 640px
+					transition: 1s max-height cubic-bezier(0, 1, 0, 1)
+
+				.cities.closed
+					max-height: 64px
+					transition: 1s max-height cubic-bezier(0, 1, 0, 1)
+
+
+				@media screen and (max-width:880px)
+					float: none
+				ul
+					padding-left: 0
+
+					& > li
+						opacity: 0.42
+						font-size: 16px
+						color: #333333
+						display: block
+						margin-right: 24px
+						width: 288px
+						height: 64px
+						line-height: 64px
+						padding-left: 16px
+						padding-right: 16px
+						cursor: pointer
+
+						&:hover
+							border: 1px solid #99C700
+
+		.show-variants
+			float: right
+			height: 64px
+			a
+				float: right
+				display: block
+				width: 128px
+				height: 64px
+				font-size: 16px
+				line-height: 64px
+				text-align: center
+				border: 1px solid #99C700
+				color: rgba(51, 51, 51, 0.36)
+
+			a.btn-big-fill-green
+				color: #fff
+
+			.on-map
+				border-radius: 0 2px 2px 0
+
+			.list
+				border-radius: 2px 0 0 2px
+
+			@media screen and (max-width:600px)
+				float: none
+				margin: 0 auto
+				width: 256px
+
+	.scrollarea
+		height: 500px !important
+
+	.office-list
+		position: relative
+
+		.row
+			padding-top: 32px
+			padding-bottom: 32px
+			color: #333333
+			font-size: 16px
+			border-bottom: 1px solid #333333
+			margin: 0
+
+			& > div
+				padding-left: 10px
+				padding-right: 10px
+				@media screen and (max-width:767px)
+					margin-top: 10px
+
+			.number
+
+				span
+					font-size: 14px
+					display: block
+					border: 1px solid #99C700
+					height: 40px
+					line-height: 40px
+					text-align: center
+					width: 40px
+					border-radius: 20px
+
+
+			.office-name
+				font-size: 14px
+				color: #1A2C3F
+	.map
+		height: 500px
+		position: relative
+
+		& > div
+			width: 100% !important
+			height: 100% !important
+
+	.map-container > div:last-child
+		background-color: #5A6D74 !important

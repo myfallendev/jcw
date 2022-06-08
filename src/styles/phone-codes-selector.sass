@@ -1,0 +1,137 @@
+.phone-codes-selector
+	position: relative
+
+	&::before
+		position: absolute
+		right: 10px
+		top: 32px
+		transform: translateY(-50%)
+
+.login-page
+	.phone-codes-selector::before
+		top: 56px
+
+.phone-codes-selector__selected
+	display: block
+	text-align: center
+	padding: 10px
+
+.modal__area
+	.phone-codes-selector__list
+		max-height: 200px
+
+.phone-codes-selector__list
+	position: absolute
+	display: flex
+	flex-direction: column
+	padding: 0
+	background: white
+	max-height: 250px
+	overflow: auto
+	width: 100%
+	margin-top: -5px
+	z-index: 1
+	box-shadow: 0 7px 15px 0px rgba(88, 87, 104, 0.38)
+
+.phone-codes-selector__list > li
+	display: inline-block
+	margin: 2px
+	background: #eee
+
+
+.phone-codes-selector__button
+	display: flex
+	padding: 10px
+	position: relative
+	align-items: center
+
+	&::before
+		margin-right: 15px
+
+	&:hover
+		background: #ddd
+
+.phone-codes-selector
+	.phone-codes-selector__list
+		button.phone-codes-selector__button
+			display: flex
+			padding: 10px
+			position: relative
+			align-items: center
+			width: 100%
+			border: none
+			color: #333
+			height: auto
+			line-height: 1.5em
+
+			&::before
+				margin-right: 15px
+
+			&:hover
+				background: #aaa
+				color: white
+
+			&--selected
+				background: #bbb
+				color: white
+
+.phone-input__flag-n-phone, .country-input__flag
+	display: flex
+	width: 100%
+	align-items: center
+	justify-content: space-between
+
+.phone-input, .country-input
+	.phone-input__flag-n-phone, .country-input__flag
+		.phone-codes-selector__expand-button, .country-selector__expand-button
+			font-size: 16px
+			line-height: 64px
+
+			position: relative
+
+			display: flex
+
+			max-width: 100px
+			height: 64px
+			margin-right: 10px
+			margin-bottom: 15px
+			padding-right: 10px
+			padding-left: 10px
+
+			vertical-align: top
+
+			color: #333
+			border: none
+			border-radius: 2px
+			background: #ebecef
+
+			justify-content: center
+			align-items: center
+			flex-shrink: 0
+
+			@media (max-width: 400px)
+				text-align: center
+				line-height: 40px
+				// max-width: 60px
+				&:before
+					top: 20px
+
+			&:hover
+				background: #aaa
+				color: white
+
+.phone-codes-selector__search-field
+	padding-right: 100px
+
+.phone-codes-selector__expand-button.flag::before, 
+.country-selector__expand-button.flag::before
+	margin-right: 10px
+
+.login-page
+	.phone-input__flag-n-phone
+		.phone-codes-selector__expand-button
+			margin-bottom: 0
+			margin-top: 24px
+
+#country-select-search-field
+	margin-bottom: 0

@@ -1,0 +1,1 @@
+export { RegWindow } from './RegWindow';

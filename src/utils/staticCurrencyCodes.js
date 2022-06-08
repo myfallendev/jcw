@@ -1,0 +1,1775 @@
+// Временное решение, должно браться из currencyActions через fetch с api
+let staticCurrencyCodes = [{
+    "id": 8,
+    "isoName": "ALL",
+    "name": "Лек",
+    "country": "Албания",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 12,
+    "isoName": "DZD",
+    "name": "Алжирский динар",
+    "country": "Алжир",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 32,
+    "isoName": "ARS",
+    "name": "Аргентинское песо",
+    "country": "Аргентина",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 36,
+    "isoName": "AUD",
+    "name": "Австралийский доллар",
+    "country": "Австралия; Кирибати; Кокосовые острова; Науру; Норфолк; Остров Рождества; Тувалу; Херд и Макдональд",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 44,
+    "isoName": "BSD",
+    "name": "Багамский доллар",
+    "country": "Багамские острова",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 48,
+    "isoName": "BHD",
+    "name": "Бахрейнский динар",
+    "country": "Бахрейн",
+    "digits": 3,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 50,
+    "isoName": "BDT",
+    "name": "Така",
+    "country": "Бангладеш",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 51,
+    "isoName": "AMD",
+    "name": "Армянский драм",
+    "country": "Армения",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 52,
+    "isoName": "BBD",
+    "name": "Барбадосский доллар",
+    "country": "Барбадос",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 60,
+    "isoName": "BMD",
+    "name": "Бермудский доллар",
+    "country": "Бермудские острова",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 64,
+    "isoName": "BTN",
+    "name": "Нгултрум",
+    "country": "Бутан",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 68,
+    "isoName": "BOB",
+    "name": "Боливиано",
+    "country": "Боливия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 72,
+    "isoName": "BWP",
+    "name": "Пула",
+    "country": "Ботсвана",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 84,
+    "isoName": "BZD",
+    "name": "Белизский доллар",
+    "country": "Белиз",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 90,
+    "isoName": "SBD",
+    "name": "Доллар Соломоновых Островов",
+    "country": "Соломоновы острова",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 96,
+    "isoName": "BND",
+    "name": "Брунейский доллар",
+    "country": "Бруней",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 104,
+    "isoName": "MMK",
+    "name": "Кьят",
+    "country": "Мьянма",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 108,
+    "isoName": "BIF",
+    "name": "Бурундийский франк",
+    "country": "Бурунди",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 116,
+    "isoName": "KHR",
+    "name": "Риель",
+    "country": "Камбоджа",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 124,
+    "isoName": "CAD",
+    "name": "Канадский доллар",
+    "country": "Канада",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 132,
+    "isoName": "CVE",
+    "name": "Эскудо Кабо-Верде",
+    "country": "Кабо-Верде",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 136,
+    "isoName": "KYD",
+    "name": "Доллар Каймановых островов",
+    "country": "Каймановы острова",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 144,
+    "isoName": "LKR",
+    "name": "Шри-Ланкийская рупия",
+    "country": "Шри-Ланка",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 152,
+    "isoName": "CLP",
+    "name": "Чилийское песо",
+    "country": "Чили",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 156,
+    "isoName": "CNY",
+    "name": "Юань жэньминьби",
+    "country": "Китай",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 170,
+    "isoName": "COP",
+    "name": "Колумбийское песо",
+    "country": "Колумбия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 174,
+    "isoName": "KMF",
+    "name": "Франк Комор",
+    "country": "Коморские острова",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 188,
+    "isoName": "CRC",
+    "name": "Костариканский колон",
+    "country": "Коста-Рика",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 191,
+    "isoName": "HRK",
+    "name": "Куна",
+    "country": "Хорватия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 192,
+    "isoName": "CUP",
+    "name": "Кубинское песо",
+    "country": "Куба",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 203,
+    "isoName": "CZK",
+    "name": "Чешская крона",
+    "country": "Чехия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 208,
+    "isoName": "DKK",
+    "name": "Датская крона",
+    "country": "Дания; Гренландия; Фарерские острова",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 214,
+    "isoName": "DOP",
+    "name": "Доминиканское песо",
+    "country": "Доминиканская Республика",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 230,
+    "isoName": "ETB",
+    "name": "Эфиопский быр",
+    "country": "Эфиопия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 232,
+    "isoName": "ERN",
+    "name": "Накфа",
+    "country": "Эритрея",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 233,
+    "isoName": "EEK",
+    "name": "Эстонская крона",
+    "country": "Эстония (до 2011 года)",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 238,
+    "isoName": "FKP",
+    "name": "Фунт Фолклендских островов",
+    "country": "Фолклендские (Мальвинские) острова",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 242,
+    "isoName": "FJD",
+    "name": "Доллар Фиджи",
+    "country": "Фиджи",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 262,
+    "isoName": "DJF",
+    "name": "Франк Джибути",
+    "country": "Джибути",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 270,
+    "isoName": "GMD",
+    "name": "Даласи",
+    "country": "Гамбия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 292,
+    "isoName": "GIP",
+    "name": "Гибралтарский фунт",
+    "country": "Гибралтар",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 320,
+    "isoName": "GTQ",
+    "name": "Кетсаль",
+    "country": "Гватемала",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 324,
+    "isoName": "GNF",
+    "name": "Гвинейский франк",
+    "country": "Гвинея",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 328,
+    "isoName": "GYD",
+    "name": "Гайанский доллар",
+    "country": "Гайана",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 332,
+    "isoName": "HTG",
+    "name": "Гурд",
+    "country": "Гаити",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 340,
+    "isoName": "HNL",
+    "name": "Лемпира",
+    "country": "Гондурас",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 344,
+    "isoName": "HKD",
+    "name": "Гонконгский доллар",
+    "country": "Гонконг",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 348,
+    "isoName": "HUF",
+    "name": "Форинт",
+    "country": "Венгрия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 352,
+    "isoName": "ISK",
+    "name": "Исландская крона",
+    "country": "Исландия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 356,
+    "isoName": "INR",
+    "name": "Индийская рупия",
+    "country": "Индия; Бутан",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 360,
+    "isoName": "IDR",
+    "name": "Рупия",
+    "country": "Восточный Тимор; Индонезия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 364,
+    "isoName": "IRR",
+    "name": "Иранский риал",
+    "country": "Иран",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 368,
+    "isoName": "IQD",
+    "name": "Иракский динар",
+    "country": "Ирак",
+    "digits": 3,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 376,
+    "isoName": "ILS",
+    "name": "Новый израильский шекель",
+    "country": "Израиль",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 388,
+    "isoName": "JMD",
+    "name": "Ямайский доллар",
+    "country": "Ямайка",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 392,
+    "isoName": "JPY",
+    "name": "Иена",
+    "country": "Япония",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 398,
+    "isoName": "KZT",
+    "name": "Тенге",
+    "country": "Казахстан",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 400,
+    "isoName": "JOD",
+    "name": "Иорданский динар",
+    "country": "Иордания",
+    "digits": 3,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 404,
+    "isoName": "KES",
+    "name": "Кенийский шиллинг",
+    "country": "Кения",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 408,
+    "isoName": "KPW",
+    "name": "Северо-корейская вона",
+    "country": "КНДР",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 410,
+    "isoName": "KRW",
+    "name": "Вона",
+    "country": "Южная Корея",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 414,
+    "isoName": "KWD",
+    "name": "Кувейтский динар",
+    "country": "Кувейт",
+    "digits": 3,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 417,
+    "isoName": "KGS",
+    "name": "Сом",
+    "country": "Киргизия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 418,
+    "isoName": "LAK",
+    "name": "Кип",
+    "country": "Лаос",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 422,
+    "isoName": "LBP",
+    "name": "Ливанский фунт",
+    "country": "Ливан",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 426,
+    "isoName": "LSL",
+    "name": "Лоти",
+    "country": "Лесото",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 428,
+    "isoName": "LVL",
+    "name": "Латвийский лат",
+    "country": "Латвия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 430,
+    "isoName": "LRD",
+    "name": "Либерийский доллар",
+    "country": "Либерия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 434,
+    "isoName": "LYD",
+    "name": "Ливийский динар",
+    "country": "Ливия",
+    "digits": 3,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 440,
+    "isoName": "LTL",
+    "name": "Литовский лит",
+    "country": "Литва",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 446,
+    "isoName": "MOP",
+    "name": "Патака",
+    "country": "Макао",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 454,
+    "isoName": "MWK",
+    "name": "Квача",
+    "country": "Малави",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 458,
+    "isoName": "MYR",
+    "name": "Малайзийский ринггит",
+    "country": "Малайзия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 462,
+    "isoName": "MVR",
+    "name": "Руфия",
+    "country": "Мальдивы",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 478,
+    "isoName": "MRO",
+    "name": "Угия",
+    "country": "Мавритания",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 480,
+    "isoName": "MUR",
+    "name": "Маврикийская рупия",
+    "country": "Маврикий",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 484,
+    "isoName": "MXN",
+    "name": "Мексиканское песо",
+    "country": "Мексика",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 496,
+    "isoName": "MNT",
+    "name": "Тугрик",
+    "country": "Монголия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 498,
+    "isoName": "MDL",
+    "name": "Молдавский лей",
+    "country": "Молдавия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 504,
+    "isoName": "MAD",
+    "name": "Марокканский дирхам",
+    "country": "Марокко; Западная Сахара",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 512,
+    "isoName": "OMR",
+    "name": "Оманский риал",
+    "country": "Оман",
+    "digits": 3,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 516,
+    "isoName": "NAD",
+    "name": "Доллар Намибии",
+    "country": "Намибия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 524,
+    "isoName": "NPR",
+    "name": "Непальская рупия",
+    "country": "Непал",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 532,
+    "isoName": "ANG",
+    "name": "Нидерландский антильский гульден",
+    "country": "Нидерландские Антильские острова",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 533,
+    "isoName": "AWG",
+    "name": "Арубанский флорин",
+    "country": "Аруба",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 548,
+    "isoName": "VUV",
+    "name": "Вату",
+    "country": "Вануату",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 554,
+    "isoName": "NZD",
+    "name": "Новозеландский доллар",
+    "country": "Новая Зеландия; Ниуэ; Острова Кука; Питкерн; Токелау",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 558,
+    "isoName": "NIO",
+    "name": "Золотая кордоба",
+    "country": "Никарагуа",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 566,
+    "isoName": "NGN",
+    "name": "Найра",
+    "country": "Нигерия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 578,
+    "isoName": "NOK",
+    "name": "Норвежская крона",
+    "country": "Норвегия; Остров Буве; Свальбард; Ян-Майен",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 586,
+    "isoName": "PKR",
+    "name": "Пакистанская рупия",
+    "country": "Пакистан",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 590,
+    "isoName": "PAB",
+    "name": "Бальбоа",
+    "country": "Панама",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 598,
+    "isoName": "PGK",
+    "name": "Кина",
+    "country": "Папуа — Новая Гвинея",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 600,
+    "isoName": "PYG",
+    "name": "Гуарани",
+    "country": "Парагвай",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 604,
+    "isoName": "PEN",
+    "name": "Новый соль",
+    "country": "Перу",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 608,
+    "isoName": "PHP",
+    "name": "Филиппинское песо",
+    "country": "Филиппины",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 634,
+    "isoName": "QAR",
+    "name": "Катарский риал",
+    "country": "Катар",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 643,
+    "isoName": "RUB",
+    "name": "Российский рубль",
+    "country": "Россия; Абхазия; Южная Осетия",
+    "digits": 2,
+    "shortName": "Руб.",
+    "symbol": "₽",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 646,
+    "isoName": "RWF",
+    "name": "Франк Руанды",
+    "country": "Руанда",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 654,
+    "isoName": "SHP",
+    "name": "Фунт Острова Святой Елены",
+    "country": "Остров Святой Елены",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 678,
+    "isoName": "STD",
+    "name": "Добра",
+    "country": "Сан-Томе и Принсипи",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 682,
+    "isoName": "SAR",
+    "name": "Саудовский риял",
+    "country": "Саудовская Аравия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 690,
+    "isoName": "SCR",
+    "name": "Сейшельская рупия",
+    "country": "Сейшельские Острова",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 694,
+    "isoName": "SLL",
+    "name": "Леоне",
+    "country": "Сьерра-Леоне",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 702,
+    "isoName": "SGD",
+    "name": "Сингапурский доллар",
+    "country": "Сингапур",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 704,
+    "isoName": "VND",
+    "name": "Донг",
+    "country": "Вьетнам",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 706,
+    "isoName": "SOS",
+    "name": "Сомалийский шиллинг",
+    "country": "Сомали",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 710,
+    "isoName": "ZAR",
+    "name": "Рэнд",
+    "country": "Свазиленд; Лесото; Намибия; Южная Африка",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 748,
+    "isoName": "SZL",
+    "name": "Лилангени",
+    "country": "Свазиленд",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 752,
+    "isoName": "SEK",
+    "name": "Шведская крона",
+    "country": "Швеция",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 756,
+    "isoName": "CHF",
+    "name": "Швейцарский франк",
+    "country": "Лихтенштейн; Швейцария",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 760,
+    "isoName": "SYP",
+    "name": "Сирийский фунт",
+    "country": "Сирия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 764,
+    "isoName": "THB",
+    "name": "Бат",
+    "country": "Таиланд",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 776,
+    "isoName": "TOP",
+    "name": "Паанга",
+    "country": "Тонга",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 780,
+    "isoName": "TTD",
+    "name": "Доллар Тринидада и Тобаго",
+    "country": "Тринидад и Тобаго",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 784,
+    "isoName": "AED",
+    "name": "Дирхам (ОАЭ)",
+    "country": "Объединённые Арабские Эмираты",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 788,
+    "isoName": "TND",
+    "name": "Тунисский динар",
+    "country": "Тунис",
+    "digits": 3,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 800,
+    "isoName": "UGX",
+    "name": "Угандийский шиллинг",
+    "country": "Уганда",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 807,
+    "isoName": "MKD",
+    "name": "Динар",
+    "country": "Македония",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 818,
+    "isoName": "EGP",
+    "name": "Египетский фунт",
+    "country": "Египет",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 826,
+    "isoName": "GBP",
+    "name": "Фунт стерлингов",
+    "country": "Великобритания",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 834,
+    "isoName": "TZS",
+    "name": "Танзанийский шиллинг",
+    "country": "Танзания",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 840,
+    "isoName": "USD",
+    "name": "Доллар США",
+    "country": "США; Американское Самоа; Британская территория в Индийском океане; Виргинские острова (Британские); Виргинские острова (США); Восточный Тимор; Гаити; Гуам; Малые Тихоокеанские Отдаленные острова США; Маршалловы острова; Микронезия; Палау; Панама; Пуэрто-Рико; Сальвадор; Эквадор",
+    "digits": 2,
+    "shortName": "Долл.",
+    "symbol": "$",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 858,
+    "isoName": "UYU",
+    "name": "Уругвайское песо",
+    "country": "Уругвай",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 860,
+    "isoName": "UZS",
+    "name": "Узбекский сум",
+    "country": "Узбекистан",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 882,
+    "isoName": "WST",
+    "name": "Тала",
+    "country": "Самоа",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 886,
+    "isoName": "YER",
+    "name": "Йеменский риал",
+    "country": "Йемен",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 894,
+    "isoName": "ZMK",
+    "name": "Замбийская квача",
+    "country": "Замбия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 901,
+    "isoName": "TWD",
+    "name": "Тайваньский доллар",
+    "country": "Тайвань",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 932,
+    "isoName": "ZWL",
+    "name": "Доллар Зимбабве",
+    "country": "Зимбабве",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 934,
+    "isoName": "TMT",
+    "name": "Новый манат",
+    "country": "Туркмения",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 936,
+    "isoName": "GHS",
+    "name": "Седи",
+    "country": "Гана",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 937,
+    "isoName": "VEF",
+    "name": "Боливар фуэрте",
+    "country": "Венесуэла",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 938,
+    "isoName": "SDG",
+    "name": "Суданский фунт",
+    "country": "Судан",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 940,
+    "isoName": "UYI",
+    "name": "Уругвайское песо в индексированных единицах",
+    "country": "Уругвай",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 941,
+    "isoName": "RSD",
+    "name": "Сербский динар",
+    "country": "Сербия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 943,
+    "isoName": "MZN",
+    "name": "Метикал",
+    "country": "Мозамбик",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 944,
+    "isoName": "AZN",
+    "name": "Азербайджанский манат",
+    "country": "Азербайджан",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 946,
+    "isoName": "RON",
+    "name": "Румынский лей",
+    "country": "Румыния",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 949,
+    "isoName": "TRY",
+    "name": "Турецкая лира",
+    "country": "Турция",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 950,
+    "isoName": "XAF",
+    "name": "Франк КФА ВЕАС (денежная единица Банка государств Центральной Африки)",
+    "country": "Габон; Камерун; Республика Конго; Центральноафриканская Республика; Чад; Экваториальная Гвинея",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 951,
+    "isoName": "XCD",
+    "name": "Восточно-карибский доллар",
+    "country": "Ангилья; Антигуа и Барбуда; Гренада; Доминика; Монсеррат; Сент-Винсент и Гренадины; Сент-Китс и Невис; Сент-Люсия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 968,
+    "isoName": "SRD",
+    "name": "Суринамский доллар",
+    "country": "Суринам",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 969,
+    "isoName": "MGA",
+    "name": "Малагасийский ариари",
+    "country": "Мадагаскар",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 971,
+    "isoName": "AFN",
+    "name": "Афгани",
+    "country": "Афганистан",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 972,
+    "isoName": "TJS",
+    "name": "Сомони",
+    "country": "Таджикистан",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 973,
+    "isoName": "AOA",
+    "name": "Кванза",
+    "country": "Ангола",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 974,
+    "isoName": "BYR",
+    "name": "Белорусский рубль",
+    "country": "Беларусь",
+    "digits": 0,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 975,
+    "isoName": "BGN",
+    "name": "Лев",
+    "country": "Болгария",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 976,
+    "isoName": "CDF",
+    "name": "Конголезский франк",
+    "country": "Демократическая Республика Конго",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 977,
+    "isoName": "BAM",
+    "name": "Конвертируемая марка",
+    "country": "Босния и Герцеговина",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 978,
+    "isoName": "EUR",
+    "name": "Евро",
+    "country": "Австрия; Андорра; Бельгия; Ватикан; Гваделупа; Германия; Греция; Ирландия; Испания; Италия; Кипр, Люксембург; Мальта, Мартиника; Монако; Нидерланды; Португалия; Реюньон; Сан-Марино; Словакия; Словения; Сен-Пьер и Микелон; Финляндия; Франция; Французская Гвиана; Французские Южные Территории; Черногория; Эстония (с 2011 года)",
+    "digits": 2,
+    "shortName": "Евро",
+    "symbol": "€",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 980,
+    "isoName": "UAH",
+    "name": "Гривна",
+    "country": "Украина",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 981,
+    "isoName": "GEL",
+    "name": "Лари",
+    "country": "Грузия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 985,
+    "isoName": "PLN",
+    "name": "Злотый",
+    "country": "Польша",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 986,
+    "isoName": "BRL",
+    "name": "Бразильский реал",
+    "country": "Бразилия",
+    "digits": 2,
+    "shortName": null,
+    "symbol": null,
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2001,
+    "isoName": "BTC",
+    "name": "Bitcoin",
+    "country": "",
+    "digits": 8,
+    "shortName": "BTC",
+    "symbol": "BTC",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2002,
+    "isoName": "ETH",
+    "name": "Ethereum",
+    "country": "",
+    "digits": 8,
+    "shortName": "ETH",
+    "symbol": "ETH",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2003,
+    "isoName": "LTC",
+    "name": "Litecoin",
+    "country": "",
+    "digits": 8,
+    "shortName": "LTC",
+    "symbol": "LTC",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2004,
+    "isoName": "BTS",
+    "name": "BitShares",
+    "country": "",
+    "digits": 8,
+    "shortName": "BTS",
+    "symbol": "BTS",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2005,
+    "isoName": "XMR",
+    "name": "Monero",
+    "country": "",
+    "digits": 8,
+    "shortName": "XMR",
+    "symbol": "XMR",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2006,
+    "isoName": "DASH",
+    "name": "Dash",
+    "country": "",
+    "digits": 8,
+    "shortName": "DASH",
+    "symbol": "DASH",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2007,
+    "isoName": "XRP",
+    "name": "Ripple",
+    "country": "",
+    "digits": 8,
+    "shortName": "XRP",
+    "symbol": "XRP",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2008,
+    "isoName": "BCH",
+    "name": "Bitcoin Cash",
+    "country": "",
+    "digits": 8,
+    "shortName": "BCH",
+    "symbol": "BCH",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2009,
+    "isoName": "ZEC",
+    "name": "Zcash",
+    "country": "",
+    "digits": 8,
+    "shortName": "ZEC",
+    "symbol": "ZEC",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2010,
+    "isoName": "ETC",
+    "name": "Ethereum Classic",
+    "country": "",
+    "digits": 8,
+    "shortName": "ETC",
+    "symbol": "ETC",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2011,
+    "isoName": "XEM",
+    "name": "NEM",
+    "country": "",
+    "digits": 6,
+    "shortName": "XEM",
+    "symbol": "XEM",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2012,
+    "isoName": "DOGE",
+    "name": "Doge",
+    "country": "",
+    "digits": 8,
+    "shortName": "DOGE",
+    "symbol": "DOGE",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2013,
+    "isoName": "USDT",
+    "name": "Usdt",
+    "country": "",
+    "digits": 2,
+    "shortName": "USDT",
+    "symbol": "USDT",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2016,
+    "isoName": "USDC",
+    "name": "USDC",
+    "country": "",
+    "digits": 2,
+    "shortName": "USDC",
+    "symbol": "USDC",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2017,
+    "isoName": "APL",
+    "name": "Apollo",
+    "country": "",
+    "digits": 2,
+    "shortName": "APL",
+    "symbol": "APL",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2018,
+    "isoName": "XCC",
+    "name": "XE",
+    "country": "",
+    "digits": 8,
+    "shortName": "XE",
+    "symbol": "XE",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2019,
+    "isoName": "TRI",
+    "name": "TRI",
+    "country": "",
+    "digits": 8,
+    "shortName": "TRI",
+    "symbol": "TRI",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2020,
+    "isoName": "USDTC",
+    "name": "USDTC",
+    "country": "",
+    "digits": 2,
+    "shortName": "USDTC",
+    "symbol": "USDTC",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2021,
+    "isoName": "BNB",
+    "name": "Binance coin",
+    "country": "",
+    "digits": 8,
+    "shortName": "BNB",
+    "symbol": "BNB",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2022,
+    "isoName": "NIOC",
+    "name": "Goodstc Cordoba",
+    "country": "",
+    "digits": 8,
+    "shortName": "NIOC",
+    "symbol": "NIOC",
+    "errorCode": 0,
+    "errors": null
+}, {
+    "id": 2023,
+    "isoName": "BXN",
+    "name": "Banxcoin",
+    "country": "",
+    "digits": 8,
+    "shortName": "BXN",
+    "symbol": "BXN",
+    "errorCode": 0,
+    "errors": null
+}
+];
+
+export default staticCurrencyCodes;

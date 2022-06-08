@@ -1,0 +1,42 @@
+  {"payment_types":[{
+    "id": 0,
+    "name": "Мобильный телефон",
+    "image": "mobile.png"
+  },
+  {
+    "id": 1,
+    "name": "Транспорт",
+    "image": "transport.png"
+  },
+  {
+    "id": 2,
+    "name": "Телевидение",
+    "image": "television.png"
+  },
+  {
+    "id": 3,
+    "name": "Погашение кредита",
+    "image": "credit.png"
+  },
+  {
+    "id": 4,
+    "name": "Коммунальные платежи",
+    "image": "communal-payments.png"
+  },
+  {
+    "id": 5,
+    "name": "Электронные кошельки",
+    "image": "ewallet.png"
+  },  
+  {
+    "id": 6,
+    "name": "Коммунальные платежи",
+    "image": "communal-payments.png"
+  },
+  {
+    "id": 7,
+    "name": "Электронные кошельки",
+    "image": "ewallet.png"
+  }
+  ]
+}

@@ -1,0 +1,564 @@
+@mixin defaultInput($font-size)
+	background: #ebecef
+	border-radius: 2px
+	height: 64px
+	font-size: $font-size
+	color: #333333
+	padding-left: 20px
+	padding-right: 10px
+	border: none
+	letter-spacing: 1px
+
+$container-padding: 15px 33px 20px
+$prime-color: #3898ce
+
+.exchange-page
+	padding: 60px 40px
+
+	@media (max-width: 900px)
+		padding: 20px
+
+	@media (max-width: 450px)
+		padding: 10px 5px
+
+	.blur
+		position: relative
+
+		&::before
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 10
+
+	.increase
+		color: #7baefc
+
+	.decrease
+		color: #e83d39
+
+	.wallets__container
+		overflow: auto
+
+	.row
+		margin-bottom: 50px
+		display: flex
+		flex-wrap: nowrap
+		justify-content: space-between
+
+		@media (max-width: 1400px)
+			margin: 0
+			flex-wrap: wrap
+
+			&.first-row
+				margin-bottom: 20px
+
+		& > div
+			max-width: none
+			background: white
+			border-radius: 5px
+			position: relative
+
+			&:not(.rate-history)
+				padding-top: 10px
+
+				@media (max-width: 500px)
+					padding: 10px 15px 25px
+
+			.name
+				font-size: 30px
+				margin-bottom: 22px
+				font-weight: 700
+
+		// &.trading
+		// 	@media (max-width: 1450px)
+		// 		flex-wrap: wrap
+	& .row.first-row > div:not(.trading-view)
+		padding-top: 0
+
+	.wallets, .active-orders, .market-orders, .trade-crypto
+		padding: $container-padding
+		position: relative
+
+	.trading, .orders
+		& > div
+			background: white
+			min-height: 400px
+			margin: 0
+			width: calc(100% / 3 - 15px)
+
+			&:nth-of-type(2)
+				margin: 0 auto
+
+			@media (max-width: 1400px)
+				width: calc(50% - 15px)
+				margin: 0 0 20px
+
+				&:nth-of-type(2)
+					margin: 0 auto 20px 0
+
+			@media (max-width: 767px)
+				width: 100%
+
+		.wallets
+			@media (max-width: 1400px)
+				width: 100%
+				margin-bottom: 20px
+
+			@media (max-width: 450px)
+				max-width: 100%
+				overflow: auto
+				font-size: 12px
+
+	.row.orders
+		& > div
+			padding-bottom: 20px
+
+		.active-orders
+			@media (max-width: 1400px)
+				order: 1
+				width: 100%
+
+			@media (max-width: 500px)
+				.name
+					padding-right: 50px
+
+			.active-orders__no-orders-text
+				color: #aaa
+				font-weight: 300
+
+		.current-pair-orders, .other-orders__item
+			max-width: 100%
+			overflow: auto
+
+		.market-orders__container
+			@media (max-width: 992px)
+				height: 300px
+				overflow: auto
+
+			.item
+				cursor: pointer
+
+				&:hover td
+					color: #ff7a57
+
+		.wallets.active-orders
+			@media (max-width: 1350px)
+				order: 1
+				width: 100%
+
+			@media (max-width: 450px)
+				padding: 15px
+
+			@media (max-width: 1440px)
+				.time
+					display: none
+
+	table
+		background: #fff
+		width: 100%
+
+		td:first-child, th:first-child
+			text-align: left
+
+		td:first-child
+			color: #030304
+			font-size: 14px
+			font-weight: 600
+			text-transform: uppercase
+
+		th, td
+			padding-left: 12px
+			padding-right: 12px
+			text-align: right
+
+			@media (max-width: 500px)
+				padding: 12px
+
+		th
+			border-bottom: 1px solid #f7f7f7
+			opacity: 0.4
+			color: #030304
+			font-size: 16px
+			font-weight: 400
+			line-height: 30px
+
+			@media (max-width: 500px)
+				text-align: center
+
+		td
+			height: 30px
+
+			@media (max-width: 500px)
+				text-align: center
+
+			@media (max-width: 1440px) and (min-width: 993px)
+				padding: 5px 0
+
+				&:last-of-type
+					padding-left: 10px
+
+		.item:nth-child(2n + 1)
+			background: #fcfdfd
+
+	.rate-history
+		background: #fff
+		padding: 0
+		overflow: auto
+		width: 20%
+		position: relative
+
+		@media (max-width: 1300px)
+			display: flex
+			width: 100%
+			height: auto
+			margin-bottom: 20px
+
+		@media (max-width: 1300px) and (min-width: 501px)
+			min-height: 330px
+
+		@media (max-width: 600px)
+			display: block
+
+		& > div
+			padding: 20px 23px
+
+		.markets
+			background: #3898ce
+			position: relative
+
+			.px16-semipale-text
+				color: #fff !important
+
+			span
+				color: #fff
+				font-size: 30px
+				font-weight: 700
+
+			sup
+				top: -2.5em
+				color: white
+
+			&:after
+				content: ''
+				display: block
+				width: 6px
+				height: 6px
+				transform: rotate(45deg)
+				margin-left: auto
+				margin-right: auto
+				background: #3898ce
+				position: absolute
+				left: 0
+				right: 0
+				bottom: -3px
+
+				@media (max-width: 1300px) and (min-width: 601px)
+					bottom: 50%
+					right: -5px
+					left: auto
+					transform: rotate(-45deg) translateY(-50%)
+
+		.prices
+
+			.highest
+				margin-top: 33px
+				padding-top: 22px
+				border-top: 1px solid #f7f7f7
+				margin-right: -23px
+				margin-left: -23px
+				padding-left: 23px
+
+			.value
+				font-size: 24px
+				margin-bottom: 20px
+
+			img
+				margin-top: -10px
+				margin-left: 8px
+
+	.row
+		.trading-view
+			background: white
+			display: flex
+			justify-content: center
+			align-items: center
+			overflow: auto
+			position: relative
+			min-height: 200px
+
+			@media (min-width: 1301px)
+				width: calc(80% - 220px)
+				margin-left: 10px
+				padding: 20px
+
+			@media (max-width: 1300px)
+				width: 100%
+				padding: 40px 10px
+
+			@media (max-width: 450px)
+				.react-stockcharts-tooltip
+					font-size: 9px
+
+			.css-loader
+				z-index: 10
+
+			.reset
+				cursor: pointer
+
+	#tradingview-widget
+		padding-left: 25px
+
+	#tradingview-widget, #tradingview-widget > div, #tradingview-widget > div > div, #tradingview-widget > div > div iframe
+		width: 100% !important
+
+	.trading-view__no-chart-icon
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+
+	.trading-view__toggle-button
+		display: none
+		width: 100px
+		height: 100px
+		background: #3898ce url('/img/chart-icon.svg') center no-repeat
+		background-size: cover
+		border-radius: 50%
+		z-index: 100
+		border: none
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		transition: box-shadow 0.3s
+
+		&:hover
+			box-shadow: 0 5px 10px rgba(28, 114, 162, 0.5)
+
+		&--close
+			background: #3898ce
+			left: auto
+			right: 15px
+			bottom: 15px
+			top: auto
+			transform: none
+
+			&::before, &::after
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%) rotate(45deg)
+				width: 5px
+				height: 50px
+				background: white
+
+			&::before
+				transform: translate(-50%, -50%) rotate(-45deg)
+		&--open
+			display: block
+
+		@media (max-width: 992px)
+			display: block
+
+	@import './trade-crypto'
+	.trade-crypto
+		input
+			@include defaultInput(18px)
+
+	.trade-history
+		padding: $container-padding
+		min-height: 200px
+
+		@media (max-width: 992px)
+			width: 100%
+
+		.trade-history__table-container
+			max-width: 100%
+			overflow: auto
+
+		table
+			.item--increase
+				// background: rgba(#7baefc, 0.05)
+
+				&:hover
+					background: rgba(#7baefc, 0.3)
+
+				td:first-child
+					color: #7baefc
+
+			.item--decrease
+				// background: rgba(#e83d39, 0.05)
+
+				&:hover
+					background: rgba(#e83d39, 0.3)
+
+				td:first-child
+					color: #e83d39
+
+			.date
+				text-align: left
+
+		.trade-history__buttons
+			text-align: center
+
+
+		.trade-history__button
+			border-radius: 50%
+			width: 50px
+			height: 50px
+			padding: 1px
+			margin: 15px
+			display: inline-block
+			border: none
+			position: relative
+
+			&::after
+				content: ''
+				width: 12px
+				height: 12px
+				position: absolute
+				left: 50%
+				border-bottom: 3px solid white
+				border-left: 3px solid white
+
+			&--more::after
+				top: 16px
+				transform: translateX(-50%) rotate(-45deg)
+
+			&--less::after
+				top: 21px
+				transform: translateX(-50%) rotate(135deg)
+
+
+	@import './exchange-pairs'
+
+.btn-close, .active-orders__cancel-button
+	width: 24px
+	height: 24px
+	background: #3898ce
+	color: white
+	font-weight: 300
+	border-radius: 50%
+	border: none
+	padding: 0
+	text-align: center
+	line-height: 30px
+	position: relative
+	opacity: 0.7
+	transition: 0.3s
+	vertical-align: middle
+	transition: 0.5s all
+
+	&:hover
+		opacity: 1
+
+	&::after, &::before,
+		content: ""
+		position: absolute
+		height: 12px
+		width: 2px
+		transform: rotate(45deg)
+		top: 6px
+		left: 11px
+		background: white
+
+	&::before,
+		transform: rotate(-45deg)
+
+
+.other-orders__title
+	margin-top: 70px
+
+.other-orders__item
+	padding-bottom: 5px
+	border-bottom: 1px solid #f7f7f7
+
+.other-orders__subtitle
+	margin-top: 20px
+	font-size: 17px
+	font-weight: 600
+	color: $prime-color
+	line-height: 35px
+	opacity: 0.7
+
+.current-pair-orders
+	padding-bottom: 5px
+
+.market-orders__container
+	max-height: 500px
+	overflow: auto
+
+.trading-view__no-data
+	text-align: center
+
+	button
+		margin-top: 10px
+
+.active-orders__expand-button
+	position: absolute
+	top: 20px
+	right: 10px
+	width: 45px
+	height: 45px
+	padding: 0
+
+	&::before, &::after
+		content: ""
+		position: absolute
+		border: 2px solid
+		width: 11px
+		height: 11px
+		transform: translateY(-50%) rotate(45deg)
+		top: 50%
+
+	&::before
+		border-right: none
+		border-top: none
+		left: 13px
+
+	&::after
+		border-left: none
+		border-bottom: none
+		right: 13px
+
+	&--collapse
+			&::before
+				transform: translateY(-50%) rotate(225deg)
+				left: 8px
+
+			&::after
+				transform: translateY(-50%) rotate(225deg)
+				right: 8px
+
+.swap-exchange-blocks
+	display: flex
+	justify-content: center
+	align-items: center
+	top: calc(50% - 24px)
+	left: calc(100% - 13px)
+	position: absolute
+	width: 48px
+	height: 48px
+	border: 1px solid #ccc
+	z-index: 1
+	background-color: #fff
+	border-radius: 6px
+	transition: all .1s ease-in-out
+	cursor: pointer
+	@media screen and (max-width: 1400px)
+		left: calc(100% - 9px)
+	@media screen and (max-width: 767px)
+		display: none
+	& img
+		display: block
+		width: 48px
+		height: 48px
+	&:hover
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, .1)
+	&:active
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, .1)
+
